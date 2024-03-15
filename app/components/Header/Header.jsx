@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <header className="flex items-center max-w-[1300px] m-auto p-5 pt-8 justify-between px-4 py-2 mb-[-80px]  text-white z-50 relative">
             <div className="flex items-center">
-                <img src="/logo.svg" alt="Logo" className="w-full h-full mr-2" />
+                <img src="/Logo.svg" alt="Logo" className="w-full h-full mr-2" />
             </div>
             <div className="md:hidden">
                 <button
