@@ -1,6 +1,14 @@
 .counter-swiper {
     width: 100%;
-    height: 250px !important;
+    height: 200px !important;
+    border-top-width: 1px; /* Adjust the width as needed */
+    border-bottom-width: 1px; /* Adjust the width as needed */
+    border-left-width: 0; /* Transparent left border */
+    border-right-width: 0; /* Transparent right border */
+    border-style: solid;
+    border-image: linear-gradient(to right, rgb(196, 202, 207, 0.6), Transparent);
+    border-image-slice: 1;
+ 
 }
 
 .counter-swiper .swiper-slide {
@@ -13,4 +21,22 @@
 
 .swiper-pagination-bullet {
     background: #E33A3D;
+}
+
+@media screen and (min-width: 1300px){
+
+    .counter-swiper .swiper-slide:after {
+        content:"";
+        position: absolute;
+        width: 1px;
+        height: 50px;
+        background-color: #E33A3D;
+        left:0; 
+        top:50%;
+        transform: translate(0 , -50%);
+    }
+
+    .counter-swiper .swiper-slide:first-child:after {
+        display: none;
+    }
 }

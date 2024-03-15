@@ -17,6 +17,7 @@ import { FetchHeroSlider } from "./FetchHeroSlider";
 import { urlFor } from "../../../sanity/lib/ImageUrlBuilder";
 
 import { RxArrowRight } from "react-icons/rx";
+import "react-icons/rx";
 
 export default function HeroSlider() {
   const [SlideData, setSlideDate] = useState();
