@@ -8,3 +8,9 @@ import { client } from "../client";
 }
 
 
+
+export function FetchGallery () {    
+        const GALLERY_QUERY = `*[_type == 'partnersLogo'] {gallery}`;
+        const Gallery = client.fetch(GALLERY_QUERY);
+        return Gallery;
+}

@@ -39,7 +39,7 @@ export default function CounterSlider({ counters }) {
           <div>
             <h5 className="text-[46px] tracking-[2px]">
             <CountUp end={`${counters[0].parts}`} enableScrollSpy={true} />              
-              <span className="block uppercase text-[20px] tracking-[2px]">
+              <span className="block uppercase text-[16px] tracking-[2px]">
                 parts
               </span>
             </h5>
@@ -49,7 +49,7 @@ export default function CounterSlider({ counters }) {
           <div>
             <h5 className="text-[46px] tracking-[2px]">
             <CountUp end={`${counters[0].year}`} enableScrollSpy={true} />  
-              <span className="block uppercase text-[20px] tracking-[2px]">
+              <span className="block uppercase text-[16px] tracking-[2px]">
                 year
               </span>
             </h5>
@@ -59,7 +59,7 @@ export default function CounterSlider({ counters }) {
           <div>
             <h5 className="text-[46px] tracking-[2px]">
             <CountUp end={`${counters[0].brands}`} enableScrollSpy={true} />  
-              <span className="block uppercase text-[20px] tracking-[2px]">
+              <span className="block uppercase text-[16px] tracking-[2px]">
               brands
               </span>
             </h5>
