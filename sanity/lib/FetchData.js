@@ -21,3 +21,10 @@ export function FetchTeams () {
     const Teams = client.fetch(TEAM_QUERY);
     return Teams;
 }
+
+
+export function FetchWhatWeDo () {
+    const WHATWEDO_QUERY = `*[_type == 'whatWeDo']{title  , reel , _id}`;
+    const WhatWeDo = client.fetch(WHATWEDO_QUERY);
+    return WhatWeDo;
+}

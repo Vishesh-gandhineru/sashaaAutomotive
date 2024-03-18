@@ -1,8 +1,7 @@
 
 import "./globals.css";
 
-import localFont from '@next/font/local'
-import Header from "./components/Header/Header";
+import localFont from 'next/font/local'
 
 const avenirTs = localFont({
   src: [
