@@ -5,6 +5,7 @@ import HeroSlider from "./components/HeroSlider/HeroSlider";
 import PartnersGallery from "./components/PartnerGallery/PartnerGallery";
 import TeamsSection from "./components/Team/TeamSection";
 import WhatWeDoSection from "./components/WhatWeDo/whatWeDoSection";
+import LegacySection from "./components/Legacy/LegacySection";
 
 import './globals.css';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Counter />
       <WhatWeDoSection />
       <PartnersGallery />
+      <LegacySection />
       <TeamsSection />  
     </main>
   );

@@ -28,3 +28,9 @@ export function FetchWhatWeDo () {
     const WhatWeDo = client.fetch(WHATWEDO_QUERY);
     return WhatWeDo;
 }
+
+export function FetchLegacy () {
+    const LEGACY_QUERY = `*[_type == 'legacy']{title , subtitle , body , image , _id}`;
+    const Legacy = client.fetch(LEGACY_QUERY);
+    return Legacy;
+}

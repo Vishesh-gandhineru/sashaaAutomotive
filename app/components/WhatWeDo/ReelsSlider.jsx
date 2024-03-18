@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from 'swiper/modules';
 
 import { getFileAsset , buildFileUrl } from "@sanity/asset-utils";
-import { client } from "../../../sanity/client";
+
 
 
 import "swiper/css";
@@ -20,6 +20,12 @@ export default function ReelsSlider({reels}) {
 
 
     const handleMute = (e) => {
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+            if (video !== e.target) {
+                video.muted = true;
+            }
+        });
         e.target.muted = !e.target.muted;
     }
 
@@ -44,7 +50,7 @@ export default function ReelsSlider({reels}) {
           
             },
           }}
-        className="reels-swiper"
+        className="reels-swiper" 
       >
         {
             reels.map (reel => {
