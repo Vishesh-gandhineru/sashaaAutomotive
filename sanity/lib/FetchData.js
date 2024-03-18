@@ -14,3 +14,10 @@ export function FetchGallery () {
         const Gallery = client.fetch(GALLERY_QUERY);
         return Gallery;
 }
+
+
+export function FetchTeams () {
+    const TEAM_QUERY = `*[_type == 'team-member']{name , bio , image , _id}`;
+    const Teams = client.fetch(TEAM_QUERY);
+    return Teams;
+}

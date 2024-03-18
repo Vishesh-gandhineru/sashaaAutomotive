@@ -38,8 +38,8 @@ export default function CounterSlider({ counters }) {
         <SwiperSlide className="text-center">
           <div>
             <h5 className="text-[46px] tracking-[2px]">
-            <CountUp end={`${counters[0].parts}`} enableScrollSpy={true} />              
-              <span className="block uppercase text-[16px] tracking-[2px]">
+            <CountUp end={`${counters[0].parts}`} enableScrollSpy={true} className="text-[#C4CBD0]"/>              
+              <span className="block uppercase text-[14px] tracking-[2px]">
                 parts
               </span>
             </h5>
@@ -48,8 +48,8 @@ export default function CounterSlider({ counters }) {
         <SwiperSlide className="text-center">
           <div>
             <h5 className="text-[46px] tracking-[2px]">
-            <CountUp end={`${counters[0].year}`} enableScrollSpy={true} />  
-              <span className="block uppercase text-[16px] tracking-[2px]">
+            <CountUp end={`${counters[0].year}`} enableScrollSpy={true} className="text-[#C4CBD0]"/>  
+              <span className="block uppercase text-[14px] tracking-[2px]">
                 year
               </span>
             </h5>
@@ -58,8 +58,8 @@ export default function CounterSlider({ counters }) {
         <SwiperSlide className="text-center">
           <div>
             <h5 className="text-[46px] tracking-[2px]">
-            <CountUp end={`${counters[0].brands}`} enableScrollSpy={true} />  
-              <span className="block uppercase text-[16px] tracking-[2px]">
+            <CountUp end={`${counters[0].brands}`} enableScrollSpy={true} className="text-[#C4CBD0]"/>  
+              <span className="block uppercase text-[14px] tracking-[2px]">
               brands
               </span>
             </h5>

@@ -7,9 +7,9 @@ export default async function PartnersGallery() {
     const galleryList = await FetchGallery();
 
     return (
-        <section className="mt-5 py-5 lg:p-5">
+        <section className="mt-5 py-5 lg:p-5 max-w-[1300px] m-auto">
             <div>
-                <h2 className="uppercase text-[18px] text-center leading-[20px] tracking-[2px]">Our partners</h2>
+                <h2 className="uppercase text-[14px] text-center leading-[20px] tracking-[2px]">Our partners</h2>
             </div>
             <div className="mt-5">
                 <LogoGallerySlider galleryList={galleryList} /> 
