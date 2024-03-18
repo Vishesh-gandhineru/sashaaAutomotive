@@ -1,9 +1,9 @@
 .swiper-scrollbar  {
-    background: #E33A3D;
+    background: rgba(227, 58, 61, 0.5);
     height:1px !important;
     overflow:visible;
     margin-bottom: 30px;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .swiper-scrollbar-drag {

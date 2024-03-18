@@ -16,6 +16,8 @@ import './Legacy.css'
 
 export default function LegacySlider ({legacy}) {
     return (
+        <>     
+        
        <Swiper scrollbar={{
         show:true,
         
@@ -44,5 +46,6 @@ export default function LegacySlider ({legacy}) {
         
 
       </Swiper>
+        </>
     )
 }
