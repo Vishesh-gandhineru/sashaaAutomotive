@@ -26,20 +26,27 @@ export default function SparePartsSection (){
         return Categories;
     };
 
+    function handleCategorieChange(e) {
+        const selectedCategoryId = e.target.value;
+        console.log(selectedCategoryId);
+    }
+
     useEffect(() => {
         FetchSpareParts().then(data => setSpareParts(data))
     }, []);
 
     useEffect(() => {
         FetchSpareCategorie().then(data => setCategories(data))
+        setSpareParts([]); // Reset the spare parts list when categories change
     }, []);
 
+    console.warn(spareParts);
     return (
         <section className="my-8">
             <div className="categoryFilter flex gap-3 uppercase flex-row flex-nowrap items-center whitespace-nowrap overflow-x-scroll xl:overflow-hidden">
                 {Categories.map(item => {
                     return (
-                        <div key={item._id} className="border p-4">
+                        <div key={item._id} className="border p-4" onClick={handleCategorieChange} value={item._id}>
                             <h3>{item.title}</h3>
                         </div>
                     )
