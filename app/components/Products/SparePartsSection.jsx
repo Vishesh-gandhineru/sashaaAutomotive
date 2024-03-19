@@ -7,12 +7,14 @@ import { urlFor } from "../../../sanity/lib/ImageUrlBuilder";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
+
  
 
 export default function SparePartsSection (){
     const [spareParts, setSpareParts] = useState([]);
-    const [QueryString, setQueryString] = useState("")
+    const [filteredSpareParts, setFilteredSpareParts] = useState(null);
     const [Categories, setCategories] = useState([])
+
 
     const FetchSpareParts = () => {
         const SPAREPARTS_QUERY = `*[_type == 'spareParts']{title , categories , image , _id}`;
@@ -27,12 +29,19 @@ export default function SparePartsSection (){
     };
 
     function handleCategorieChange(e) {
-        const selectedCategoryId = e.target.value;
-        console.log(selectedCategoryId);
+        const selectedCategoryId = e.currentTarget.getAttribute("value");
+        
+
+        const filteredSpareParts = spareParts.filter(item => {
+            return item.categories.some(category => category._ref === selectedCategoryId);
+        });
+        setFilteredSpareParts(filteredSpareParts);       
     }
 
     useEffect(() => {
         FetchSpareParts().then(data => setSpareParts(data))
+
+        
     }, []);
 
     useEffect(() => {
@@ -40,7 +49,7 @@ export default function SparePartsSection (){
         setSpareParts([]); // Reset the spare parts list when categories change
     }, []);
 
-    console.warn(spareParts);
+
     return (
         <section className="my-8">
             <div className="categoryFilter flex gap-3 uppercase flex-row flex-nowrap items-center whitespace-nowrap overflow-x-scroll xl:overflow-hidden">
@@ -69,7 +78,7 @@ export default function SparePartsSection (){
                     },
                 }}
             className="sparePartSlider my-8">
-                {spareParts.map(item => {
+                {filteredSpareParts == null ? <>{ spareParts.map(item => {
                     return (
                         <SwiperSlide key={item._id} className="slider" style={{width:"fit-content"}}>
                         <div  className="productCard">
@@ -79,7 +88,18 @@ export default function SparePartsSection (){
 
                         </SwiperSlide>
                     )
-                })}
+                })}</> : <>{ filteredSpareParts.map(item => {
+                    return (
+                        <SwiperSlide key={item._id} className="slider" style={{width:"fit-content"}}>
+                        <div  className="productCard">
+                            <img src={urlFor(item.image).url()} alt={item.title} />
+                            <h3 className="text-center mt-3 text-[14px]">{item.title}</h3>
+                        </div>
+
+                        </SwiperSlide>
+                    )
+                })}</>}
+                
 
             </Swiper>
             </div>
