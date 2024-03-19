@@ -7,6 +7,7 @@ import TeamsSection from "./components/Team/TeamSection";
 import WhatWeDoSection from "./components/WhatWeDo/whatWeDoSection";
 import LegacySection from "./components/Legacy/LegacySection";
 import SpecialOrder from "./components/SpecialOrder/SpecialOrder";
+import Footer from "./components/Footer/Footer";
 
 import './globals.css';
 
@@ -21,6 +22,7 @@ export default function Home() {
       <LegacySection />
       <TeamsSection />  
       <SpecialOrder />
+      <Footer />
     </main>
   );
 }

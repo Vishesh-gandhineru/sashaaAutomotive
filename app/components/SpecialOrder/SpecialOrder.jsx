@@ -7,7 +7,7 @@ import { HiOutlineArrowLongRight } from "react-icons/hi2";
 export default async function SpecialOrder() {
  const special= await FetchSpecialOrders();
  return (
- <section className="max-w-[1300px] p-5 m-auto">
+ <section className="max-w-[1300px] p-5 m-auto h-[800px] lg:h-[600px]">
  <div className="ImagesSection relative w-full">
     <img src={urlFor(special[0].mainImage).url()} className="h-[350px] w-full object-cover object-center lg:h-full lg:w-[50%] lg:ml-[80px]" />
     <img src={urlFor(special[0].secondImage).url()} className="hidden lg:block lg:absolute left-[15%] top-[80%]" />
