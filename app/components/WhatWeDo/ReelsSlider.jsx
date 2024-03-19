@@ -55,7 +55,7 @@ export default function ReelsSlider({reels}) {
         {
             reels.map (reel => {
                 return (
-                    <SwiperSlide onClick={handleMute}>
+                    <SwiperSlide onClick={handleMute} key={reel._key}>
                         
                         <div>
                             <video autoPlay muted loop className="m-auto w-[250px] lg:w-[300px] rounded-[10px]">

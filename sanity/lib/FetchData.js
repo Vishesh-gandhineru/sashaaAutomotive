@@ -34,3 +34,9 @@ export function FetchLegacy () {
     const Legacy = client.fetch(LEGACY_QUERY);
     return Legacy;
 }
+
+export function FetchSpecialOrders () {
+    const SPECIALORDERS_QUERY = `*[_type == 'specialOrders']{title , body , mainImage , secondImage , thirdImage , _id}`;
+    const SpecialOrders = client.fetch(SPECIALORDERS_QUERY);
+    return SpecialOrders;
+}

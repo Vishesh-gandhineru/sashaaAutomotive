@@ -6,6 +6,7 @@ import PartnersGallery from "./components/PartnerGallery/PartnerGallery";
 import TeamsSection from "./components/Team/TeamSection";
 import WhatWeDoSection from "./components/WhatWeDo/whatWeDoSection";
 import LegacySection from "./components/Legacy/LegacySection";
+import SpecialOrder from "./components/SpecialOrder/SpecialOrder";
 
 import './globals.css';
 
@@ -19,6 +20,7 @@ export default function Home() {
       <PartnersGallery />
       <LegacySection />
       <TeamsSection />  
+      <SpecialOrder />
     </main>
   );
 }
