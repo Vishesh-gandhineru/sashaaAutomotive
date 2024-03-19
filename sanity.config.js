@@ -16,24 +16,7 @@ export default defineConfig({
   projectId : 'zllfluo3',
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
-  schema:{
-    ...schema,
-    // Add this 'category child' template
-    templates: (prev) => {
-      const categoryChild = {
-        id: 'category-child',
-        title: 'Category: Child',
-        schemaType: 'category',
-        parameters: [{name: `parentId`, title: `Parent ID`, type: `string`}],
-        // This value will be passed-in from desk structure
-        value: ({parentId}) => ({
-          parent: {parentId},
-        }),
-      }
-  
-      return [...prev, categoryChild]
-    },
-  },
+  schema,
   plugins: [
     structureTool(),
     // Vision is a tool that lets you query your content with GROQ in the studio
