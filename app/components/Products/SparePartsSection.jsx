@@ -37,6 +37,12 @@ export default function SparePartsSection (){
         });
         setFilteredSpareParts(filteredSpareParts);       
     }
+    
+    function handleAllSpareParts() {
+        setFilteredSpareParts(null);
+    
+    }
+
 
     useEffect(() => {
         FetchSpareParts().then(data => setSpareParts(data))
@@ -53,6 +59,9 @@ export default function SparePartsSection (){
     return (
         <section className="my-8">
             <div className="categoryFilter flex gap-3 uppercase flex-row flex-nowrap items-center whitespace-nowrap overflow-x-scroll xl:overflow-hidden">
+            <div  className="border p-4" onClick={handleAllSpareParts}>
+                            <h3>All</h3>
+                        </div>
                 {Categories.map(item => {
                     return (
                         <div key={item._id} className="border p-4" onClick={handleCategorieChange} value={item._id}>
