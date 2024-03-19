@@ -17,7 +17,7 @@ export default function Footer() {
             <br />
             <br /> Our commitment to precision craftsmanship, technical prowess,
             and uncompromising quality has earned us the distinction of being
-            India's foremost name in automotive modifications.
+            India&apos;s foremost name in automotive modifications.
           </p>
         </div>
         <div className="my-8 lg:my-0 lg:order-3 lg:w-[15%]">
