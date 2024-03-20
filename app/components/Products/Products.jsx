@@ -4,6 +4,7 @@ import { useState , useEffect } from "react";
 import './Product.css'
 import { Switch } from "../switch";
 import SparePartsSection from "./SparePartsSection";
+import RightIcon from "../rightIcon";
 
 
 export default function Products() {
@@ -27,13 +28,23 @@ return (
         {toggle ? (
             <div>
                 <h2>Tuning Layout</h2>
-                {/* Add your tuning layout code here */}
+                <SparePartsSection />
             </div>
         ) : (
             <div>
                 <SparePartsSection />
+                
             </div>
         )}
+
+<div className="flex justify-center items-center m-auto mb-5">
+                    <button className="text-white px-6 py-3 border-[2px] border-r-0">
+                    Enquire Now
+                    </button>
+                    <span className=" bg-white h-[52px] flex justify-center items-center py-3 px-4 text-[20px]">
+                    <RightIcon />
+                    </span>
+                  </div>
     </section>
 );
 }

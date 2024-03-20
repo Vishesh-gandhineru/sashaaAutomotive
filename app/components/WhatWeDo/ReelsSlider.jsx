@@ -62,9 +62,9 @@ export default function ReelsSlider({reels}) {
                                 <source src={`${buildFileUrl(getFileAsset(reel.video.asset, project), project)}`} />
                             </video>
                         </div>
-                        <div className="text-center text-[18px] mt-5">
+                        <div className="text-center text-[20px] mt-[20px]">
                             <p>{reel.title}</p>
-                            <p className="uppercase text-[16px] mt-2">{reel.postDate}</p>
+                            <p className="uppercase text-[14px] mt-2 tracking-[1px]">{reel.postDate}</p>
                         </div>
                     </SwiperSlide>
                 );

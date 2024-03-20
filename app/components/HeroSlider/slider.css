@@ -29,7 +29,7 @@ backdrop-filter: blur( 4px );
   }
   .mySwiper .swiper-button-prev  {
     top:calc(100% - 58px);
-    left:68.5%;
+    left:calc(82% - 230px);
     position: absolute;
     z-index: 5000;
   }

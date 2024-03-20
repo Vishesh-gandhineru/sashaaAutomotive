@@ -8,7 +8,7 @@ export default function Footer() {
           <img src="/whiteLogo.svg" alt="white logo" className="w-[50%] my-5 lg:w-[15%]" />
         <div className="lg:flex lg:gap-[40px] lg:justify-between">
 
-        <div className="flex justify-center flex-col items-center lg:justify-start lg:order-1 lg:w-[35%]">
+        <div className="flex text-[16px] leading-[24px] justify-center flex-col items-center lg:justify-start lg:order-1 lg:w-[35%]">
           <p>
             Sashaa Automotive - where precision meets passion. Collaborating
             with esteemed brands such as McLaren, Aston Martin, Rolls Royce, and
@@ -47,13 +47,14 @@ export default function Footer() {
               </span>
             </li>
             <li className="font-[800]">
-              Contact::
+              Phone:
               <span className="block mt-1">
                 +(91) 93231 22484 <br />
                 +(91) 22 2382 2484
               </span>
             </li>
-            <li>
+            <li className="block mt-1">
+            Email:
               <span className="block mt-1">
                 sales@sashaaautomotive.com <br />
                 inquiry@sashaaautomotive.com

@@ -49,7 +49,7 @@ const Header = () => {
                     isMenuOpen ? 'block' : 'hidden'
                 } md:flex md:items-center`}
             >
-                <ul className="md:flex md:items-center md:space-x-4">
+                <ul className="md:flex md:items-center md:space-x-7">
                     <li>
                         <a href="#" className="text-white hover:text-gray-300">
                             What We Do

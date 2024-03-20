@@ -2,6 +2,7 @@ import { PortableText } from "@portabletext/react";
 import { FetchSpecialOrders } from "../../../sanity/lib/FetchData";
 import { urlFor } from "../../../sanity/lib/ImageUrlBuilder";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
+import RightIcon from "../rightIcon";
 
 
 export default async function SpecialOrder() {
@@ -17,14 +18,13 @@ export default async function SpecialOrder() {
     <h3 className="text-[36px] leading-10 mb-5">
     {special[0].title}
     </h3>
-    <div className="text-[16px] leading-7 mb-5"><PortableText value={special[0].body} /></div>
+    <div className="text-[16px] leading-[24px] mb-5"><PortableText value={special[0].body} /></div>
     <div className="flex justify-start items-center">
                     <button className="text-white px-6 py-3 border-[2px] border-r-0">
                     Enquire Now
                     </button>
                     <span className=" bg-white h-[52px] flex justify-center items-center py-3 px-4 text-[20px]">
-                      <HiOutlineArrowLongRight />
-                    </span>
+                      <RightIcon />                    </span>
                   </div>
  </div>
  

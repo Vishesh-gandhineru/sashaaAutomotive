@@ -2,3 +2,35 @@
     width: fit-content !important;
     margin-right:40px;
 } */
+
+.categoryFilter .active-filter h3{
+ color:#fff ;
+ font-weight: 800;
+}
+
+
+.categoryFilter .active-filter {
+   background: linear-gradient(90deg, rgb(227, 58, 61 , 0.51) 0%, rgb(227, 58, 61 , 0) 100%);
+   border-right:none;
+   }
+
+
+.categoryFilter .filter {
+    border-right:none;
+    }
+
+  
+
+
+      .sparePartSlider .swiper-button-prev ,  .sparePartSlider .swiper-button-next {
+        color: #fff;
+        border: 1px solid #fff;
+        width: 20px;
+        height: 20px;
+        padding: 20px;
+      }
+    
+    
+      .sparePartSlider .swiper-button-prev:after ,  .sparePartSlider .swiper-button-next:after{
+        font-size: 15px;
+      }

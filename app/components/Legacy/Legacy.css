@@ -12,3 +12,17 @@
     top:-2px;
 
 }
+
+.legacy-swiper {
+    height: 450px;
+}
+
+.legacy-swiper .swiper-pagination-bullet {
+    width: 3px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 0 !important;
+}
+.legacy-swiper .swiper-pagination{
+    right: 40px !important;
+}
