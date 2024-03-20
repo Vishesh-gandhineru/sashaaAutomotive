@@ -1,5 +1,6 @@
 "use client";
 
+import { useState , useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
@@ -13,7 +14,26 @@ import { PortableText } from "@portabletext/react";
 import "./Legacy.css";
 
 export default function LegacySlider({ legacy }) {
-  const isMobile = window.innerWidth <= 767;
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    // Check initially
+    checkIfMobile();
+
+    // Add event listener to update when window size changes
+    window.addEventListener('resize', checkIfMobile);
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []); 
+
 
   return (
     <>
