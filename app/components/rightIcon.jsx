@@ -1,8 +1,18 @@
 export default function RightIcon() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10" fill="none">
-<path d="M1.16992 5.03076H13.0024" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M9.45972 1.48828L13.0024 5.03095L9.45972 8.58006" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="10"
+        fill="none"
+        viewBox="0 0 14 10"
+      >
+        <path
+          stroke="#000"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M1.17 5.03h11.832M9.46 1.488l3.542 3.543L9.46 8.58"
+        ></path>
+      </svg>
     )
 }
