@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${avenirTs.variable} font-sans`}>
         {children}      
-        
+        <SpeedInsights />
         </body>
     </html>
   );
