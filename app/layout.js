@@ -2,6 +2,7 @@
 import "./globals.css";
 
 import localFont from 'next/font/local'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const avenirTs = localFont({
   src: [
