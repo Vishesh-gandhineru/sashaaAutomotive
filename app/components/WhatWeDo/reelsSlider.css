@@ -4,22 +4,59 @@
  
 }
 
-@media screen and (max-width: 768px) {
-    .reels-swiper {
-        width: 100%;
-    }
-    
+
+
+.reels-swiper .swiper-button-prev {
+  color: #fff;
+  border: 1px solid #fff;
+  width: 20px;
+  height: 20px;
+  padding: 20px;
+  left:0px;
 }
 
-.reels-swiper .swiper-button-prev ,  .reels-swiper .swiper-button-next {
-    color: #fff;
-    border: 1px solid #fff;
-    width: 20px;
-    height: 20px;
-    padding: 20px;
-  }
-
+.reels-swiper .swiper-button-next {
+  color: #fff;
+  border: 1px solid #fff;
+  width: 20px;
+  height: 20px;
+  padding: 20px;
+  right:0px;
+}
 
   .reels-swiper .swiper-button-prev:after ,  .reels-swiper .swiper-button-next:after{
     font-size: 15px;
   }
+
+
+
+  @media screen and (max-width: 768px) {
+    .reels-swiper {
+        width: 100%;
+    }
+
+    .reels-swiper .swiper-button-prev:after ,  .reels-swiper .swiper-button-next:after{
+        font-size: 10px;
+      }
+
+      .reels-swiper .swiper-button-prev {
+        color: #fff;
+        border: 1px solid #fff;
+        width: 20px;
+        height: 20px;
+        padding: 15px;
+        left:0;
+      }
+
+      .reels-swiper .swiper-button-next {
+        color: #fff;
+        border: 1px solid #fff;
+        width: 20px;
+        height: 20px;
+        padding: 15px;
+        right:0;
+      }
+    
+}
+
+

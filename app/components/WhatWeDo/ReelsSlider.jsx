@@ -42,7 +42,7 @@ export default function ReelsSlider({reels}) {
               
             },
             768: {
-              slidesPerView: 1,
+              slidesPerView: 2,
               
             },
             1024: {
@@ -50,21 +50,23 @@ export default function ReelsSlider({reels}) {
           
             },
           }}
-        className="reels-swiper" 
+        className="reels-swiper overflow-visible" 
       >
         {
             reels.map (reel => {
                 return (
                     <SwiperSlide onClick={handleMute} key={reel._key}>
-                        
+                        <div className="">
+
                         <div>
                             <video autoPlay muted loop className="m-auto w-[250px] lg:w-[300px] rounded-[10px]">
                                 <source src={`${buildFileUrl(getFileAsset(reel.video.asset, project), project)}`} />
                             </video>
                         </div>
-                        <div className="text-center text-[20px] mt-[20px]">
+                        <div className="reel-content text-center lg:text-center text-[20px] mt-[20px]">
                             <p>{reel.title}</p>
                             <p className="uppercase text-[14px] mt-2 tracking-[1px]">{reel.postDate}</p>
+                        </div>
                         </div>
                     </SwiperSlide>
                 );

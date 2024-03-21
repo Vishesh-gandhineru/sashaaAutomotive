@@ -44,7 +44,7 @@ backdrop-filter: blur( 4px );
   @media screen and (max-width: 768px) {
     .mySwiper .swiper-button-prev  {
       top:calc(100% - 56px);
-      left:58%;
+      left:calc(92% - 190px);
       position: absolute;
     }
   

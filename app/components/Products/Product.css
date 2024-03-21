@@ -34,3 +34,31 @@
       .sparePartSlider .swiper-button-prev:after ,  .sparePartSlider .swiper-button-next:after{
         font-size: 15px;
       }
+
+
+      @media screen and (max-width: 768px) {
+     
+    
+        .sparePartSlider.swiper-button-prev:after ,  .sparePartSlider .swiper-button-next:after{
+            font-size: 10px;
+          }
+    
+          .sparePartSlider .swiper-button-prev {
+            color: #fff;
+            border: 1px solid #fff;
+            width: 20px;
+            height: 20px;
+            padding: 15px;
+            left:0;
+          }
+    
+          .sparePartSlider .swiper-button-next {
+            color: #fff;
+            border: 1px solid #fff;
+            width: 20px;
+            height: 20px;
+            padding: 15px;
+            right:0;
+          }
+        
+    }

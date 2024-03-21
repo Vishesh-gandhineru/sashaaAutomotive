@@ -64,9 +64,9 @@ export default function SparePartsSection() {
 
   return (
     <section className="my-8">
-      <div className="categoryFilter flex gap-3 lg:gap-0 uppercase flex-row flex-nowrap items-center whitespace-nowrap overflow-x-scroll xl:overflow-hidden">
+      <div className="categoryFilter flex gap-0 uppercase flex-row flex-nowrap whitespace-nowrap items-center flex-shrink-0 overflow-x-scroll xl:overflow-hidden">
         <div
-          className="filter active-filter border border-[#CCCCCC] p-4 lg:w-[250px] cursor-pointer uppercase text-[14px] tracking-[2px]"
+          className="filter active-filter border border-[#CCCCCC] flex-shrink-0 flex-grow-0 p-4 pr-[90px] lg:w-[250px] cursor-pointer uppercase text-[14px] tracking-[2px]"
           onClick={handleAllSpareParts}
         >
           <h3 className="text-[#cccccc]">All</h3>
@@ -75,7 +75,7 @@ export default function SparePartsSection() {
           return (
             <div
               key={item._id}
-              className="filter border border-[#CCCCCC] p-4 lg:w-[250px] cursor-pointer uppercase text-[14px] tracking-[2px]"
+              className="filter border border-[#CCCCCC] pr-[90px] flex-shrink-0 flex-grow-0 p-4 lg:w-[250px] cursor-pointer uppercase text-[14px] tracking-[2px]"
               onClick={handleCategorieChange}
               value={item._id}
             >
@@ -91,7 +91,7 @@ export default function SparePartsSection() {
           modules={[Navigation]}
           breakpoints={{
             100: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 20,
             },
             768: {
@@ -114,8 +114,8 @@ export default function SparePartsSection() {
                     className="slider"
                     style={{ width: "fit-content" }}
                   >
-                    <div className="productCard grid place-content-center">
-                      <img src={urlFor(item.image).url()} alt={item.title} className="text-center" />
+                    <div className="productCard flex flex-col justify-center items-center w-[75%] m-auto">
+                      <img src={urlFor(item.image).url()} alt={item.title} className="text-center"  />
                       <h3 className="text-center mt-3 text-[14px]">
                         {item.title}
                       </h3>

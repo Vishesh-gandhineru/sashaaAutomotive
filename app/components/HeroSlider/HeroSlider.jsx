@@ -40,7 +40,7 @@ export default function HeroSlider() {
   }, [1]);
 
   return (
-    <>
+    <section>
       <Swiper 
       navigation={true}
         grabCursor={true}
@@ -65,7 +65,7 @@ export default function HeroSlider() {
                     <div className="h-full max-w-[1300px] w-full m-auto">
                         <div className="glassmorphism-hero w-full lg:w-[50%] h-[52%] lg:h-full absolute z-10 left-0"></div>
                 <div className="relative p-5 lg:p-3 pb-10 h-[50%] w-full text-center flex flex-col justify-end z-10 items-start gap-4 lg:gap-8 lg:w-[50%] lg:h-full lg:justify-center">
-                  <h1 className="text-white text-[46px] text-left  leading-[46px] lg:text-[56px] lg:leading-[66px]">
+                  <h1 className="text-white text-[36px] text-left  leading-[46px] lg:text-[56px] lg:leading-[66px]">
                   One Stop Shop for Premium European Spare Parts
                   </h1>
                   <div className="flex justify-center items-center">
@@ -85,6 +85,6 @@ export default function HeroSlider() {
             );
           })}
       </Swiper>
-    </>
+    </section>
   );
 }
