@@ -54,7 +54,7 @@ const Header = () => {
             <div className="mx-auto w-full max-w-sm">
               <ul className="flex flex-col gap-8 items-center justify-center">
                 <li>
-                  <Link scroll={false}
+                  <Link scroll={true}
                     href="#whatWeDo"
                     className="text-white hover:text-gray-300"
                   >
@@ -100,42 +100,42 @@ const Header = () => {
         } md:flex md:items-center lg:hidden xl:block`}
       >
         <ul className="md:flex md:items-center md:space-x-6">
-          <li>
-          <Link scroll={true}
+        <li>
+                  <Link scroll={true}
                     href="#whatWeDo"
                     className="text-white hover:text-gray-300"
                   >
                     What We Do
                   </Link>
-          </li>
-          <li>
-            <a href="#" className="text-white hover:text-gray-300">
-              Legacy
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-white hover:text-gray-300">
-              Spare Parts
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-white hover:text-gray-300">
-              Tuning
-            </a>
-          </li>
-          <li>
-            <a href="#" className="text-white hover:text-gray-300">
-              Special Orders
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="text-white hover:text-gray-300 border-b-[1px] pb-1"
-            >
-              Enquire Now
-            </a>
-          </li>
+                </li>
+                <li>
+                  <Link scroll={true} href="#legacy" className="text-white hover:text-gray-300">
+                    Legacy
+                  </Link>
+                </li>
+                <li>
+                  <Link scroll={true} href="#product" className="text-white hover:text-gray-300">
+                    Spare Parts
+                  </Link>
+                </li>
+                <li>
+                  <Link scroll={true} href="#product" className="text-white hover:text-gray-300">
+                    Tuning
+                  </Link>
+                </li>
+                <li>
+                  <Link scroll={true} href="#specialOrder" className="text-white hover:text-gray-300">
+                    Special Orders
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    scroll={true} href="#"
+                    className="text-white hover:text-gray-300 border-b-[1px] pb-1"
+                  >
+                    Enquire Now
+                  </Link>
+                </li>
         </ul>
       </nav>
     </header>

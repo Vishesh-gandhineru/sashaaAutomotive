@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer
@@ -22,12 +24,42 @@ export default function Footer() {
         </div>
         <div className="my-8 lg:my-0 lg:order-3 lg:w-[15%]">
           <ul className="grid grid-cols-2 gap-4 lg:grid-cols-1">
-            <li>What we do</li>
-            <li>Legacy</li>
-            <li>Spare Parts</li>
-            <li>Tuning</li>
-            <li>Special Orders</li> 
-            <li className="lg:hidden">Privacy Policy</li>
+          <li>
+                  <Link scroll={true}
+                    href="#whatWeDo"
+                    className="text-white hover:text-gray-300"
+                  >
+                    What We Do
+                  </Link>
+                </li>
+                <li>
+                  <Link scroll={true} href="#legacy" className="text-white hover:text-gray-300">
+                    Legacy
+                  </Link>
+                </li>
+                <li>
+                  <Link scroll={true} href="#product" className="text-white hover:text-gray-300">
+                    Spare Parts
+                  </Link>
+                </li>
+                <li>
+                  <Link scroll={true} href="#product" className="text-white hover:text-gray-300">
+                    Tuning
+                  </Link>
+                </li>
+                <li>
+                  <Link scroll={true} href="#specialOrder" className="text-white hover:text-gray-300">
+                    Special Orders
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    scroll={true} href="#"
+                    className="text-white hover:text-gray-300 border-b-[1px] pb-1 lg:hidden"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
           </ul>
         </div>
         <div className="lg:order-2">
