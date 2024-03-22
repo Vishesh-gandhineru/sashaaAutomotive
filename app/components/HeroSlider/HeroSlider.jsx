@@ -40,6 +40,25 @@ export default function HeroSlider() {
     fetchData();
   }, [1]);
 
+  const handleSliderButtonPosition = () => {
+    const sliderCarName = document.querySelector(".slider-carName");
+    if (sliderCarName) {
+      const carNameWidth = sliderCarName.offsetWidth;
+      const prevButton = document.querySelector(".mySwiper .swiper-button-prev");
+      if (prevButton) {
+        prevButton.style.left = `${carNameWidth + 50}px`;
+      }
+    }
+  };
+
+  useEffect(() => {
+    handleSliderButtonPosition();
+    window.addEventListener("resize", handleSliderButtonPosition);
+    return () => {
+      window.removeEventListener("resize", handleSliderButtonPosition);
+    };
+  }, []);
+
   return (
     <section>
       <Swiper 
@@ -74,7 +93,7 @@ export default function HeroSlider() {
                 </div>
                 <div className="z-2 bg-gradient-to-t h-[200px] m-auto from-[#1B1B1B] left-0 absolute bottom-0" style={{width:windowWidth}}></div>
                 <div className="z-2 bg-gradient-to-t h-[200px] m-auto from-[#0000] to-[#1B1B1B] left-0 absolute top-0" style={{width:windowWidth}}></div>
-                <div className="z-2 text-white uppercase border-b-[1px] left-0 w-[90%] lg:w-[80%] text-right border-[#E33A3D] pb-1 absolute bottom-10 tracking-[2px]">{slider.carName}</div>
+                <div className="z-2 text-white uppercase border-b-[1px] left-0  w-[90%] lg:w-[80%] text-right border-[#E33A3D] pb-1 absolute bottom-10 tracking-[2px]"><span className="slider-carName">{slider.carName}</span></div>
                     </div>
               </SwiperSlide>
             );

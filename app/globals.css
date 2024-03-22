@@ -4,9 +4,12 @@
 
 
 /* Path: app/components/MyComponent.css */
-  
+  html{
+    scroll-behavior: smooth;
+  }
   body {
     background: #1B1B1B;
+    scroll-behavior: smooth;
   }
 
 h1 , h2, h3, h4, h5, h6 , p , span , div , li , a {
