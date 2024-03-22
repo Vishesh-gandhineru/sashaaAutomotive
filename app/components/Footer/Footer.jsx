@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer
-      className="max-w-[1300px] m-auto bg-cover bg-center bg-no-repeat lg:h-[800px]"
+      className="max-w-[1300px] m-auto bg-cover bg-right bg-no-repeat lg:h-[700px]"
       style={{ backgroundImage: `url(/footerImage.png)` }}
     >
       <div className="glassmorphism-hero p-8  h-fit">

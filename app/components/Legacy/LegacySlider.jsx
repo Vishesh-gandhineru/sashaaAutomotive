@@ -83,7 +83,7 @@ export default function LegacySlider({ legacy }) {
             return (
               <SwiperSlide key={item._id}>
                 <div
-                  className="h-[650px] lg:h-[450px] bg-cover bg-center bg-no-repeat"
+                  className="h-[650px] lg:h-[500px] bg-cover bg-center bg-no-repeat"
                   style={{
                     backgroundImage: `url(${urlFor(item.image).url()})`,
                   }}

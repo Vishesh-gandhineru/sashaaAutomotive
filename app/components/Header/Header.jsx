@@ -22,12 +22,12 @@ const Header = () => {
  
 
   return (
-    <header className="flex items-center max-w-[1300px] m-auto p-5 pt-8 justify-between px-4 py-2 mb-[-80px]  text-white z-50 relative">
+    <header className="flex items-center max-w-[1300px] m-auto p-5 pt-8 justify-between lg:px-10 xl:px-4 py-2 mb-[-80px]  text-white z-50 relative">
       <div className="flex items-center">
         <img src="/Logo.svg" alt="Logo" className="w-full h-full mr-2" />
       </div>   
 
-      <div className="md:hidden">
+      <div className="xl:hidden">
       <Drawer>
         <DrawerTrigger asChild>
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,9 +80,9 @@ const Header = () => {
       </Drawer>
       </div>
       <nav
-        className={`${isMenuOpen ? "block" : "hidden"} md:flex md:items-center`}
+        className={`${isMenuOpen ? "block" : "hidden"} md:flex md:items-center lg:hidden xl:block`}
       >
-        <ul className="md:flex md:items-center md:space-x-7">
+        <ul className="md:flex md:items-center md:space-x-6">
           <li>
             <a href="#" className="text-white hover:text-gray-300">
               What We Do

@@ -8,7 +8,9 @@ import { Legacy } from './schemaTypes/Legacy'
 import { specialOrders } from './schemaTypes/specialOrders'
 import { SparePartCategory } from './schemaTypes/SparePartCategory'
 import { SpareParts } from './schemaTypes/SpareParts'
+import { Tuning } from './schemaTypes/Tuning'
+import { TuningCategory } from './schemaTypes/TuningCategory'
 
 export const schema = {
-  types: [heroSlider,counters , partnersLogo,WhatWeDo ,Legacy,teamMember,specialOrders,SpareParts,SparePartCategory,blockContent],
+  types: [heroSlider,counters , partnersLogo,WhatWeDo ,Legacy,teamMember,specialOrders,SpareParts,SparePartCategory,Tuning ,TuningCategory,blockContent],
 }

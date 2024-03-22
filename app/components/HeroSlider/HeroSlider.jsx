@@ -12,6 +12,7 @@ import "./slider.css";
 import "swiper/css/effect-fade";
 
 import RightIcon from "../rightIcon";
+import PopupButton from "../PopupButton";
 
 
 import { FetchHeroSlider } from "./FetchHeroSlider";
@@ -63,19 +64,13 @@ export default function HeroSlider() {
                       ).url()})`,
                   }} className="background-cover h-full  w-full bg-no-repeat bg-bottom bg-cover">
                     <div className="h-full max-w-[1300px] w-full m-auto">
-                        <div className="glassmorphism-hero w-full lg:w-[50%] h-[52%] lg:h-full absolute z-10 left-0"></div>
-                <div className="relative p-5 lg:p-3 pb-10 h-[50%] w-full text-center flex flex-col justify-end z-10 items-start gap-4 lg:gap-8 lg:w-[50%] lg:h-full lg:justify-center">
+                        <div className="glassmorphism-hero w-full lg:w-[55%] xl:w-[50%] h-[52%] lg:h-full absolute z-10 left-0"></div>
+                <div className="relative p-5 lg:p-3 pb-10 h-[50%] w-full text-center flex flex-col justify-end z-10 items-start gap-4 lg:gap-8 lg:w-[50%] lg:h-full lg:justify-center lg:pl-8 ">
                   <h1 className="text-white text-[36px] text-left  leading-[46px] lg:text-[56px] lg:leading-[66px]">
                   One Stop Shop for Premium European Spare Parts
                   </h1>
-                  <div className="flex justify-center items-center">
-                    <button className="text-white px-6 py-3 border-[2px] border-r-0">
-                      Have a Question
-                    </button>
-                    <span className=" bg-white h-full flex justify-center items-center py-3 px-4 text-[20px]">
-                      <RightIcon />
-                    </span>
-                  </div>
+                  
+                  <PopupButton buttonText={"Have a Question"}/>
                 </div>
                 <div className="z-2 bg-gradient-to-t h-[200px] m-auto from-[#1B1B1B] left-0 absolute bottom-0" style={{width:windowWidth}}></div>
                 <div className="z-2 bg-gradient-to-t h-[200px] m-auto from-[#0000] to-[#1B1B1B] left-0 absolute top-0" style={{width:windowWidth}}></div>

@@ -5,6 +5,8 @@ import './Product.css'
 import { Switch } from "../switch";
 import SparePartsSection from "./SparePartsSection";
 import RightIcon from "../rightIcon";
+import TuningSection from "./TuningSection";
+import PopupButton from "../PopupButton";
 
 
 export default function Products() {
@@ -27,17 +29,15 @@ return (
         
         {toggle ? (
             <div>
-                <h2>Tuning Layout</h2>
-                <SparePartsSection />
+                <TuningSection />
             </div>
         ) : (
             <div>
-                <SparePartsSection />
-                
+                <SparePartsSection />                
             </div>
         )}
-
-<div className="flex justify-center items-center m-auto mb-5">
+<div className="flex justify-center items-center">
+<div className="inline-flex justify-center items-center m-auto mb-5 hover:scale-[1.1] transition-all ease-in-out">
                     <button className="text-white px-6 py-3 border-[2px] border-r-0">
                     Enquire Now
                     </button>
@@ -45,6 +45,7 @@ return (
                     <RightIcon />
                     </span>
                   </div>
+</div>
     </section>
 );
 }
