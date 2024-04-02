@@ -1,6 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import { Drawer, DrawerContent, DrawerTrigger } from "../popup";
+import { Drawer, DrawerContent, DrawerTrigger , DrawerClose } from "../popup";
+
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "../sheet"
+
 import Link from "next/link";
 import PopupButton from "../PopupButton";
 import RightIcon from "../rightIcon";
@@ -10,24 +18,17 @@ import gsap from "gsap";
 
 import { Dialog, DialogContent, DialogTrigger } from "../dialog";
 
-
-
-
 const Header = () => {
-
   useGSAP(() => {
     // gsap code here...
-    gsap.from(".menuUl li", {opacity:0 , y:50 , stagger: 0.1}); 
-    gsap.to(".menuUl li", {opacity:1 , stagger: 0.1, duration: 1}); 
+    gsap.from(".menuUl li", { opacity: 0, y: 50, stagger: 0.1 });
+    gsap.to(".menuUl li", { opacity: 1, stagger: 0.1, duration: 1 });
 
-
-    gsap.from(".logo img", {opacity:0 ,y:50});
-    gsap.to(".logo img", {opacity:1, duration: 1});
-  
+    gsap.from(".logo img", { opacity: 0, y: 50 });
+    gsap.to(".logo img", { opacity: 1, duration: 1 });
   }, {});
 
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -38,11 +39,11 @@ const Header = () => {
       <div className="logo flex items-center">
         <img src="/Logo.svg" alt="Logo" className="w-full h-full mr-2" />
       </div>
-
+      
       <div className="xl:hidden">
-        <Drawer>
-          <DrawerTrigger asChild>
-            <svg
+      <Sheet>
+  <SheetTrigger>
+  <svg
               width="28"
               height="28"
               viewBox="0 0 28 28"
@@ -72,15 +73,12 @@ const Header = () => {
                 stroke="white"
               />
             </svg>
-          </DrawerTrigger>
-          <DrawerContent className="glassmorphism-hero px-12 py-6 pb-[50px] h-[fit-content] mx-3 mt-3 border-[#cccccc50] focus-visible:outline-none">
-            <div className="mx-auto w-full max-w-sm">
+  </SheetTrigger>
+  <SheetContent side ={"bottom"} className="glassmorphism-hero px-12 py-6 pb-[50px] h-[fit-content] mx-3 mt-3 border-[#cccccc50] border-[1px] rounded-t-[10px] focus-visible:outline-none">
+  <div className="mx-auto w-full max-w-sm">
               <ul className="flex flex-col gap-8 items-center justify-center">
-                <li
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <li>
+                  <SheetClose asChild>
                   <Link
                     scroll={true}
                     href="#whatWeDo"
@@ -88,8 +86,11 @@ const Header = () => {
                   >
                     What We Do
                   </Link>
+                  </SheetClose>
                 </li>
                 <li>
+                <SheetClose asChild>
+
                   <Link
                     scroll={true}
                     href="#legacy"
@@ -97,8 +98,12 @@ const Header = () => {
                   >
                     Legacy
                   </Link>
+
+                </SheetClose>
                 </li>
                 <li>
+                  <SheetClose asChild>
+
                   <Link
                     scroll={true}
                     href="#product"
@@ -106,8 +111,12 @@ const Header = () => {
                   >
                     Spare Parts
                   </Link>
+
+                  </SheetClose>
                 </li>
                 <li>
+                  <SheetClose asChild>
+
                   <Link
                     scroll={true}
                     href="#product"
@@ -115,8 +124,11 @@ const Header = () => {
                   >
                     Tuning
                   </Link>
+
+                  </SheetClose>
                 </li>
                 <li>
+                  <SheetClose asChild>
                   <Link
                     scroll={true}
                     href="#specialOrder"
@@ -124,8 +136,12 @@ const Header = () => {
                   >
                     Special Orders
                   </Link>
+
+                  </SheetClose>
                 </li>
                 <li>
+                  <SheetClose asChild>
+
                   <Link
                     scroll={true}
                     href="#"
@@ -133,11 +149,13 @@ const Header = () => {
                   >
                     Enquire Now
                   </Link>
+
+                  </SheetClose>
                 </li>
               </ul>
             </div>
-          </DrawerContent>
-        </Drawer>
+  </SheetContent>
+</Sheet>
       </div>
       <nav
         className={`${

@@ -97,16 +97,6 @@ export default function SparePartsSection() {
     }, 1000);
   }, [1]);
 
-//GSAP animation
-
-useGSAP(()=>{
-  gsap.from('.spareParts-slider' , {opacity: 0, duration: 1, y: 100 , stagger: 0.1 , scrollTrigger: {
-    trigger: ".sparePartSlider",
-    start: "top 80%",
-    end: "bottom 50%",
-    toggleActions: "play stop play reverse",
-}})
-} , {})
 
 
   return (

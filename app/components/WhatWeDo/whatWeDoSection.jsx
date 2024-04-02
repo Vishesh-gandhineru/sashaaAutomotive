@@ -9,8 +9,8 @@ export default async function WhatWeDoSection () {
     const reels = whatWeDo[0].reel;
 
     return (
-        <section id="whatWeDo" className="whatWeDo max-w-[1200px] p-5 m-auto mt-[50px] lg:px-8 xl:px-5">
-            <div className="mt-8 lg:mt-[50px]">
+        <section id="whatWeDo" className="whatWeDo max-w-[1200px] p-5 m-auto lg:mt-[50px] lg:px-8 xl:px-5">
+            <div className="mt-5">
              <ReelsSlider reels={reels}/>
             </div>
         </section>

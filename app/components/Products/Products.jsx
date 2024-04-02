@@ -18,7 +18,7 @@ export default function Products() {
         setToggle(prev => !prev)
     }
 return (
-    <section id="product" className="max-w-[1300px] m-auto p-5 mb-10">
+    <section id="product" className="max-w-[1300px] m-auto p-5 mb-10 mt-5">
         <div className="flex justify-center items-center gap-5 text-[24px]">
         <h5>Spare Parts</h5>
         <Switch onCheckedChange = {handelChange}

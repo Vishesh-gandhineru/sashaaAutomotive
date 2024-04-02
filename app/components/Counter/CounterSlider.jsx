@@ -30,7 +30,7 @@ export default function CounterSlider({ counters }) {
         trigger: ".counter-swiper",
         start: "top 100%",
         end: "bottom 10%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play stop play reverse",
       }})
 
 
@@ -38,7 +38,7 @@ export default function CounterSlider({ counters }) {
         trigger: ".counter-swiper",
         start: "top 100%",
         end: "bottom 10%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play stop play reverse",
       }})
     }, {});
 

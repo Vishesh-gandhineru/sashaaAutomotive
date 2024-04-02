@@ -1,7 +1,6 @@
 .teams-swiper {
     width: 100%;
-    height: fit-content !important; 
-    padding-bottom: 50px;
+    height: fit-content !important;
 }
 
 .teams-swiper .swiper-slide {

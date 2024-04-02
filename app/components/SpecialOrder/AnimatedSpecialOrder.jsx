@@ -20,7 +20,7 @@ export default function AnimatedSpecialOrder({ special }) {
             end: "bottom 50%",
             toggleActions: "play stop play reverse",
         }})
-        gsap.from('.glassmorphism-hero' , {opacity: 0, duration: 1, y: 100 , stagger: 0.1 , scrollTrigger: {
+        gsap.from('.glassmorphism-content' , {opacity: 0, duration: 1, y: 100 , stagger: 0.1 , scrollTrigger: {
             trigger: ".mainSection",
             start: "top 80%",
             end: "bottom 50%",
@@ -37,7 +37,7 @@ export default function AnimatedSpecialOrder({ special }) {
     <video autoPlay muted loop src="https://cdn.sanity.io/files/zllfluo3/production/7d7b4b27f89255bd852e5077d00c0164abde0800.mp4" className="w-[150px] absolute top-[70%] left-[200px] hidden lg:block"/>
     <img src={urlFor(special[0].thirdImage).url()} className="hidden lg:block lg:absolute lg:left-[80%] lg:top-[0] lg:w-[180px]"/>
  </div>
- <div className="lg:ml-8 p-8 glassmorphism-hero mt-[-150px] w-[100%] lg:w-[65%] lg:mt-[-200px] lg:float-end">
+ <div className="lg:ml-8 p-8 glassmorphism-hero glassmorphism-content mt-[-150px] w-[100%] lg:w-[65%] lg:mt-[-200px] lg:float-end">
     <h3 className="text-[36px] leading-10 mb-5">
     {special[0].title}
     </h3>

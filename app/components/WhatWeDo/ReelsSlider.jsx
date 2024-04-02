@@ -37,7 +37,7 @@ export default function ReelsSlider({reels}) {
             trigger: ".whatWeDoSection",
             start: "top 100%",
             end: "bottom 50%",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play stop play reverse",
           }});
       }, {});
 
