@@ -23,7 +23,7 @@ export default function Footer() {
         start: "top 80%",
         end: "bottom 60%",
         toggleActions: "play stop play reverse",
-        markers: true,
+
       }
     })
 
@@ -36,7 +36,7 @@ export default function Footer() {
         start: "top 80%",
         end: "bottom 60%",
         toggleActions: "play stop play reverse",
-        markers: true,
+     
       }
     })
 
@@ -49,7 +49,7 @@ export default function Footer() {
         start: "top 80%",
         end: "bottom 60%",
         toggleActions: "play stop play reverse",
-        markers: true,
+  
       }
     
     })
