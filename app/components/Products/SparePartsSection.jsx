@@ -133,7 +133,7 @@ export default function SparePartsSection() {
                     className="slider"
                     style={{ width: "fit-content" }}
                   >
-                    <div className="productCard">
+                    <div className="productCard flex flex-col justify-center items-center w-[75%] m-auto">
                       <img src={urlFor(item.image).url()} alt={item.title} />
                       <h3 className="text-center mt-3 text-[14px]">
                         {item.title}
