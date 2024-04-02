@@ -30,7 +30,7 @@ export function FetchWhatWeDo () {
 }
 
 export function FetchLegacy () {
-    const LEGACY_QUERY = `*[_type == 'legacy']{title , subtitle , body , image , _id}`;
+    const LEGACY_QUERY = `*[_type == 'legacy']{title , subtitle , body , image , _id, order} | order(order asc)`;
     const Legacy = client.fetch(LEGACY_QUERY);
     return Legacy;
 }

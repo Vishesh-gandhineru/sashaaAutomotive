@@ -10,7 +10,27 @@ import "swiper/css/navigation";
 
 import "swiper/css";
 
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(useGSAP,ScrollTrigger);
+
 export default function SparePartsSection() {
+
+  
+  
+
+
+  const idsInOrder = [
+    "828192be-9b99-4d92-86b0-cc000c9f9d65", 
+    "6d7bc084-d00c-4771-b2f9-c846f4680eec", 
+    "65893765-13d9-4799-a181-049ed2591cd6", 
+    "c3afc2f6-ee63-4546-bbbf-3d70124bef16"
+  ];
+  
+ 
+
+
   const [spareParts, setSpareParts] = useState([]);
   const [filteredSpareParts, setFilteredSpareParts] = useState(null);
   const [Categories, setCategories] = useState([]);
@@ -58,28 +78,51 @@ export default function SparePartsSection() {
   }, []);
 
   useEffect(() => {
-    FetchSpareCategorie().then((data) => setCategories(data));
+    FetchSpareCategorie().then((data) => {
+      const sortedCategories = data.sort((a, b) => {
+        return idsInOrder.indexOf(a._id) - idsInOrder.indexOf(b._id);
+      });
+      // Set the sorted categories in the state
+      setCategories(sortedCategories);
+    });
     setSpareParts([]); // Reset the spare parts list when categories change
   }, []);
 
+
+  useEffect(() => {
+    setTimeout(() => {
+      const suspension = document.getElementById("suspension");
+      suspension.click();    
+      console.log("clicked")  
+    }, 1000);
+  }, [1]);
+
+//GSAP animation
+
+useGSAP(()=>{
+  gsap.from('.spareParts-slider' , {opacity: 0, duration: 1, y: 100 , stagger: 0.1 , scrollTrigger: {
+    trigger: ".sparePartSlider",
+    start: "top 80%",
+    end: "bottom 50%",
+    toggleActions: "play stop play reverse",
+}})
+} , {})
+
+
   return (
     <section className="my-8">
-      <div className="categoryFilter flex gap-0 uppercase flex-row flex-nowrap whitespace-nowrap items-center flex-shrink-0 overflow-x-scroll xl:overflow-hidden">
-        <div
-          className="filter active-filter border border-[#CCCCCC] flex-shrink-0 flex-grow-0 p-4 pr-[90px] lg:w-[250px] cursor-pointer uppercase text-[14px] tracking-[2px]"
-          onClick={handleAllSpareParts}
-        >
-          <h3 className="text-[#cccccc]">All</h3>
-        </div>
-        {Categories.map((item) => {
+      <div className="categoryFilter xl:justify-center flex gap-0 uppercase flex-row flex-nowrap whitespace-nowrap items-center flex-shrink-0 overflow-x-scroll xl:overflow-hidden">
+       
+        {Categories.map((item ,index) => {
           return (
             <div
+            id={item.title}
               key={item._id}
-              className="filter border border-[#CCCCCC] pr-[90px] flex-shrink-0 flex-grow-0 p-4 lg:w-[250px] cursor-pointer uppercase text-[14px] tracking-[2px]"
+              className={`filter border border-[rgba(255,255,255,0.40)] pr-[90px] flex-shrink-0 flex-grow-0 p-4 lg:w-[300px] cursor-pointer uppercase text-[14px] tracking-[2px] ${index === 0 ? 'active-filter' : ''}`}
               onClick={handleCategorieChange}
               value={item._id}
             >
-              <h3 className="text-[#cccccc]">{item.title}</h3>
+              <h3 className="text-[rgba(255,255,255,0.40)]">{item.title}</h3>
             </div>
           );
         })}
@@ -103,7 +146,7 @@ export default function SparePartsSection() {
               spaceBetween: 0,
             },
           }}
-          className="sparePartSlider my-8"
+          className="sparePartSlider my-8 overflow-visible"
         >
           {filteredSpareParts == null ? (
             <>
@@ -111,7 +154,7 @@ export default function SparePartsSection() {
                 return (
                   <SwiperSlide
                     key={item._id}
-                    className="slider"
+                    className="spareParts-slider slider"
                     style={{ width: "fit-content" }}
                   >
                     <div className="productCard flex flex-col justify-center items-center w-[75%] m-auto">
@@ -130,7 +173,7 @@ export default function SparePartsSection() {
                 return (
                   <SwiperSlide
                     key={item._id}
-                    className="slider"
+                    className="spareParts-slider slider"
                     style={{ width: "fit-content" }}
                   >
                     <div className="productCard flex flex-col justify-center items-center w-[75%] m-auto">

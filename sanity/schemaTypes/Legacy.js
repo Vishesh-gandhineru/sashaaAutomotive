@@ -33,6 +33,11 @@ export const Legacy ={
             title: 'Image',
             type: 'image',
         },
+        {
+            name: 'order',
+            title: 'order',
+            type: 'number',
+        },
     ],
     preview: {
         select: {

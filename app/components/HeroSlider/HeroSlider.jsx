@@ -1,5 +1,5 @@
 "use client";
-
+import gsap from "gsap";
 import { useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,6 +14,8 @@ import "swiper/css/effect-fade";
 import RightIcon from "../rightIcon";
 import PopupButton from "../PopupButton";
 
+import { useGSAP } from "@gsap/react";
+
 
 import { FetchHeroSlider } from "./FetchHeroSlider";
 
@@ -21,8 +23,23 @@ import { urlFor } from "../../../sanity/lib/ImageUrlBuilder";
 
 import { RxArrowRight } from "react-icons/rx";
 import "react-icons/rx";
+import { set } from "sanity";
 
 export default function HeroSlider() {
+
+
+  //GSAP animation
+  useGSAP(() => {
+    // gsap code here...
+    let tl = gsap.timeline();
+    tl.from('.herosliderSection', {opacity: 0, duration: 1, y: 100})
+    tl.to('.herosliderSection', {opacity: 1, duration: 1, y: 0})
+
+
+  }, {});
+
+
+
   const [SlideData, setSlideDate] = useState();
   const [SlideDataready, setSlideDataready] = useState(false);
 
@@ -59,8 +76,9 @@ export default function HeroSlider() {
     };
   }, []);
 
+
   return (
-    <section>
+    <section className="herosliderSection">
       <Swiper 
       navigation={true}
         grabCursor={true}
@@ -85,7 +103,7 @@ export default function HeroSlider() {
                     <div className="h-full max-w-[1300px] w-full m-auto">
                         <div className="glassmorphism-hero w-full lg:w-[55%] xl:w-[50%] h-[52%] lg:h-full absolute z-10 left-0"></div>
                 <div className="relative p-5 lg:p-3 pb-10 h-[50%] w-full text-center flex flex-col justify-end z-10 items-start gap-4 lg:gap-8 lg:w-[50%] lg:h-full lg:justify-center lg:pl-8 ">
-                  <h1 className="text-white text-[36px] text-left  leading-[46px] lg:text-[56px] lg:leading-[66px]">
+                  <h1 className="sliderText text-white text-[36px] text-left  leading-[46px] lg:text-[56px] lg:leading-[66px]">
                   One Stop Shop for Premium European Spare Parts
                   </h1>
                   

@@ -1,4 +1,5 @@
 
+
 import Counter from "./components/Counter/Counter";
 import Header from "./components/Header/Header";
 import HeroSlider from "./components/HeroSlider/HeroSlider";
@@ -9,7 +10,6 @@ import LegacySection from "./components/Legacy/LegacySection";
 import SpecialOrder from "./components/SpecialOrder/SpecialOrder";
 import Products from "./components/Products/Products";
 import Footer from "./components/Footer/Footer";
-
 import './globals.css';
 
 export default function Home() {

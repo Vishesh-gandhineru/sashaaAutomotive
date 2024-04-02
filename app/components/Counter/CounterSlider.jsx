@@ -1,6 +1,15 @@
 "use client";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { urlFor } from "../../../sanity/lib/ImageUrlBuilder";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(useGSAP,ScrollTrigger);
+
 
 import CountUp from 'react-countup';
 
@@ -13,8 +22,32 @@ import "./Counter.css";
 import { Pagination } from "swiper/modules";
 
 export default function CounterSlider({ counters }) {
+
+    //GSAP animation
+
+    useGSAP(() => {
+      gsap.from('.counter-slider' , {opacity: 0, duration: 1, y: 100 ,stagger:0.2, scrollTrigger:{
+        trigger: ".counter-swiper",
+        start: "top 100%",
+        end: "bottom 10%",
+        toggleActions: "play reverse play reverse",
+      }})
+
+
+      gsap.from('.counterCarImage', {opacity: 0, duration: 1, y: 100, scrollTrigger:{
+        trigger: ".counter-swiper",
+        start: "top 100%",
+        end: "bottom 10%",
+        toggleActions: "play reverse play reverse",
+      }})
+    }, {});
+
+
+
+
   return (
     <>
+    <img src={urlFor(counters[0].image).url()} alt="man seating inside car" className="counterCarImage lg:w-[318px]"/>
       <Swiper
         pagination={true}
         modules={[Pagination]}
@@ -35,7 +68,7 @@ export default function CounterSlider({ counters }) {
           }}
         className="counter-swiper"
       >
-        <SwiperSlide className="text-center">
+        <SwiperSlide className="counter-slider text-center">
           <div>
             <h5 className="text-[46px] tracking-[2px]">
             <CountUp end={`${counters[0].parts}`} enableScrollSpy={true} className="text-[#C4CBD0]"/>              
@@ -45,7 +78,7 @@ export default function CounterSlider({ counters }) {
             </h5>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="text-center">
+        <SwiperSlide className="counter-slider text-center">
           <div>
             <h5 className="text-[46px] tracking-[2px]">
             <CountUp end={`${counters[0].year}`} enableScrollSpy={true} className="text-[#C4CBD0]"/>  
@@ -55,7 +88,7 @@ export default function CounterSlider({ counters }) {
             </h5>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="text-center">
+        <SwiperSlide className="counter-slider text-center">
           <div>
             <h5 className="text-[46px] tracking-[2px]">
             <CountUp end={`${counters[0].brands}`} enableScrollSpy={true} className="text-[#C4CBD0]"/>  

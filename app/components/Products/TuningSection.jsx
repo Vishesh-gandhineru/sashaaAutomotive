@@ -63,18 +63,27 @@ export default function TuningSection() {
         setTuning([]); // Reset the tuning list when categories change
     }, []);
 
+    useEffect(() => {
+        setTimeout(() => {
+          const Aerodynamics = document.getElementById("Aerodynamics");
+          Aerodynamics.click();    
+          console.log("clicked")  
+        }, 1000);
+      }, [1]);
+
     return (
         <section className="my-8">
-            <div className="categoryFilter justify-center flex gap-0 uppercase flex-row flex-nowrap whitespace-nowrap items-center flex-shrink-0 overflow-x-scroll xl:overflow-hidden">
+            <div className="categoryFilter xl:justify-center flex gap-0 uppercase flex-row flex-nowrap whitespace-nowrap items-center flex-shrink-0 overflow-x-scroll xl:overflow-hidden">
                 {tuningCategories.map((item, index) => {
                     return (
                         <div
+                            id={item.title}
                             key={item._id}
-                            className={`filter border border-[#CCCCCC] pr-[90px] flex-shrink-0 flex-grow-0 p-4 lg:w-[300px] cursor-pointer uppercase text-[14px] tracking-[2px] ${index === 0 ? 'active-filter' : ''}`}
+                            className={`filter border border-[rgba(255,255,255,0.40)] pr-[90px] flex-shrink-0 flex-grow-0 p-4 lg:w-[300px] cursor-pointer uppercase text-[14px] tracking-[2px] ${index === 0 ? 'active-filter' : ''}`}
                             onClick={handleTuningCategoryChange}
                             value={item._id}
                         >
-                            <h3 className="text-[#cccccc]">{item.title}</h3>
+                            <h3 className="text-[rgba(255,255,255,0.40)]">{item.title}</h3>
                         </div>
                     );
                 })}
@@ -87,7 +96,7 @@ export default function TuningSection() {
                                 return (
                                    
                                         <div key={item._id} className="productCardTuning flex flex-row justify-center items-center w-[75%] m-auto">
-                                            <img src={urlFor(item.image).url()} alt={item.title} className="text-center"  />
+                                            <img src={urlFor(item.image).url()} alt={item.title} className="text-center md:w-[50%]"  />
                                             <div className="text-left mt-3 text-[14px]">
                                                <PortableText value={item.body} /> 
                                             </div>
@@ -102,7 +111,7 @@ export default function TuningSection() {
                                 return (
                                    
                                     <div  key={item._id} className="productCardTuning flex flex-row justify-center items-center w-[75%] m-auto">
-                                    <img src={urlFor(item.image).url()} alt={item.title} className="text-center"  />
+                                    <img src={urlFor(item.image).url()} alt={item.title} className="text-center md:w-[50%]"  />
                                     <div className="text-left mt-3 text-[14px]">
                                        <PortableText value={item.body} /> 
                                     </div>

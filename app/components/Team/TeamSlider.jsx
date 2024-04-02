@@ -12,10 +12,40 @@ import "./Teams.css"
 import { Pagination } from "swiper/modules";
 
 import { urlFor } from "../../../sanity/lib/ImageUrlBuilder";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(useGSAP,ScrollTrigger);
+
+
 
 export default function TeamSlider({ teams }) {
+
+    //GSAP animation  
+    useGSAP(() => {
+        gsap.from('.team-swiper-slider' , {opacity: 0, duration: 1, y: 100 , stagger: 0.2 , scrollTrigger: {
+            trigger: ".teams-swiper",
+            start: "top 80%",
+            end: "bottom 50%",
+            toggleActions: "play stop play reverse",
+          }});
+
+          gsap.from (".team-heading-text" , {opacity: 0, duration: 1, y: 100 , stagger: 0.2 , scrollTrigger: {
+            trigger: ".team-heading-text",
+            start: "top 100%",
+            end: "bottom 50%",
+            toggleActions: "play stop play reverse",
+          }})
+      }, {});
+
+
+
+
+
   return (
     <>
+    <h2 className="team-heading-text mb-10 uppercase text-[14px] text-center leading-[20px] tracking-[2px]">
+                Heritage Driven Excellence</h2>   
       <Swiper
         pagination={true}
         modules={[Pagination]}
@@ -35,7 +65,7 @@ export default function TeamSlider({ teams }) {
       >
         {teams.map((team) => {
           return (
-            <SwiperSlide key={team._id} className="text-center gap-4">
+            <SwiperSlide  key={team._id} className="team-swiper-slider text-center gap-4">
               <img
                 src={urlFor(team.image).url()}
                 alt={team.name}

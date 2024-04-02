@@ -55,7 +55,7 @@ export default function LegacySlider({ legacy }) {
                 >
                   <div className="glassmorphism-hero p-5 lg:w-[50%] lg:h-full lg:p-[40px]">
                     <h3 className="text-[32px] leading-[42px] capitalize my-3 text-[#C4CBD0]">
-                      {item.title}
+                    The Sashaa <br />Automotive Legacy
                     </h3>
                     <h6 className="text-[18px] uppercase tracking-[2px] mb-3">
                       {item.subtitle}
@@ -90,7 +90,7 @@ export default function LegacySlider({ legacy }) {
                 >
                   <div className="glassmorphism-hero p-5 lg:w-[50%] lg:h-full lg:p-[40px] lg:flex lg:flex-col lg:justify-center">
                     <h3 className="text-[38px] leading-[48px] capitalize my-3">
-                      {item.title}
+                    The Sashaa <br />Automotive Legacy
                     </h3>
                     <h6 className="text-[16px] uppercase tracking-[2px] mb-3">
                       {item.subtitle}
