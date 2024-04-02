@@ -9,20 +9,21 @@ import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 
 import "swiper/css";
+import { PortableText } from "@portabletext/react";
 
 export default function TuningSection() {
     const [tuning, setTuning] = useState([]);
     const [filteredTuning, setFilteredTuning] = useState(null);
     const [tuningCategories, setTuningCategories] = useState([]);
-
+    console.log(filteredTuning)
     const FetchTuning = () => {
-        const TUNING_QUERY = `*[_type == 'tuning']{title , categories , image , _id}`;
+        const TUNING_QUERY = `*[_type == 'tuning']{title , categories , body , image , _id}`;
         const tuning = client.fetch(TUNING_QUERY);
         return tuning;
     };
 
     const FetchTuningCategories = () => {
-        const TUNING_CATEGORIES_QUERY = `*[_type == 'tuningCategory']{title , _id}`;
+        const TUNING_CATEGORIES_QUERY = `*[_type == 'tuningCategory']{title , _id} | order(title asc)`;
         const tuningCategories = client.fetch(TUNING_CATEGORIES_QUERY);
         return tuningCategories;
     };
@@ -64,18 +65,12 @@ export default function TuningSection() {
 
     return (
         <section className="my-8">
-            <div className="categoryFilter flex gap-0 uppercase flex-row flex-nowrap whitespace-nowrap items-center flex-shrink-0 overflow-x-scroll xl:overflow-hidden">
-                <div
-                    className="filter active-filter border border-[#CCCCCC] flex-shrink-0 flex-grow-0 p-4 pr-[90px] lg:w-[250px] cursor-pointer uppercase text-[14px] tracking-[2px]"
-                    onClick={handleAllTuning}
-                >
-                    <h3 className="text-[#cccccc]">All</h3>
-                </div>
-                {tuningCategories.map((item) => {
+            <div className="categoryFilter justify-center flex gap-0 uppercase flex-row flex-nowrap whitespace-nowrap items-center flex-shrink-0 overflow-x-scroll xl:overflow-hidden">
+                {tuningCategories.map((item, index) => {
                     return (
                         <div
                             key={item._id}
-                            className="filter border border-[#CCCCCC] pr-[90px] flex-shrink-0 flex-grow-0 p-4 lg:w-[250px] cursor-pointer uppercase text-[14px] tracking-[2px]"
+                            className={`filter border border-[#CCCCCC] pr-[90px] flex-shrink-0 flex-grow-0 p-4 lg:w-[300px] cursor-pointer uppercase text-[14px] tracking-[2px] ${index === 0 ? 'active-filter' : ''}`}
                             onClick={handleTuningCategoryChange}
                             value={item._id}
                         >
@@ -85,42 +80,19 @@ export default function TuningSection() {
                 })}
             </div>
             <div className="ProductGrid">
-                <Swiper
-                    grabCursor={true}
-                    navigation={true}
-                    modules={[Navigation]}
-                    breakpoints={{
-                        100: {
-                            slidesPerView: 1,
-                            spaceBetween: 20,
-                        },
-                        768: {
-                            slidesPerView: 3,
-                            spaceBetween: 30,
-                        },
-                        1024: {
-                            slidesPerView: 3,
-                            spaceBetween: 30,
-                        },
-                    }}
-                    className="sparePartSlider my-8"
-                >
+                
                     {filteredTuning == null ? (
                         <>
-                            {tuning.map((item) => {
+                            {tuning.slice(0, 1).map((item , index) => {
                                 return (
-                                    <SwiperSlide
-                                        key={item._id}
-                                        className="tuningCard"
-                                        style={{ width: "fit-content" }}
-                                    >
-                                        <div className="productCard flex flex-col justify-center items-center w-[75%] m-auto">
+                                   
+                                        <div key={item._id} className="productCardTuning flex flex-row justify-center items-center w-[75%] m-auto">
                                             <img src={urlFor(item.image).url()} alt={item.title} className="text-center"  />
-                                            <h3 className="text-center mt-3 text-[14px]">
-                                                {item.title}
-                                            </h3>
+                                            <div className="text-left mt-3 text-[14px]">
+                                               <PortableText value={item.body} /> 
+                                            </div>
                                         </div>
-                                    </SwiperSlide>
+                                   
                                 );
                             })}
                         </>
@@ -128,23 +100,18 @@ export default function TuningSection() {
                         <>
                             {filteredTuning.map((item) => {
                                 return (
-                                    <SwiperSlide
-                                        key={item._id}
-                                        className="tuningCard"
-                                        style={{ width: "fit-content" }}
-                                    >
-                                        <div className="productCard">
-                                            <img src={urlFor(item.image).url()} alt={item.title} />
-                                            <h3 className="text-center mt-3 text-[14px]">
-                                                {item.title}
-                                            </h3>
-                                        </div>
-                                    </SwiperSlide>
+                                   
+                                    <div  key={item._id} className="productCardTuning flex flex-row justify-center items-center w-[75%] m-auto">
+                                    <img src={urlFor(item.image).url()} alt={item.title} className="text-center"  />
+                                    <div className="text-left mt-3 text-[14px]">
+                                       <PortableText value={item.body} /> 
+                                    </div>
+                                </div>
+                                   
                                 );
                             })}
                         </>
                     )}
-                </Swiper>
             </div>
         </section>
     );

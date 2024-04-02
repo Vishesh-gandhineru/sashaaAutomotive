@@ -15,6 +15,13 @@ export const Tuning = {
             type: 'image',
         },
         {
+            title: 'Body',
+            name: 'body',
+            type: 'array',
+            of: [{type: 'block'}]
+           
+        },
+        {
             title: 'Tuning Categories',
             name: 'categories',
             type: 'array',

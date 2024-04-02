@@ -99,8 +99,8 @@ export default function SparePartsSection() {
               spaceBetween: 30,
             },
             1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
+              slidesPerView: 4,
+              spaceBetween: 0,
             },
           }}
           className="sparePartSlider my-8"
