@@ -1,6 +1,6 @@
 .teams-swiper {
     width: 100%;
-    height: fit-content !important;
+   
 }
 
 .teams-swiper .swiper-slide {
@@ -14,4 +14,13 @@
 
 .swiper-pagination-bullet {
     background: #E33A3D;
+}
+
+@media (max-width: 768px) {
+    
+
+    .teams-swiper .swiper-pagination {
+       position: relative;
+       margin-top: 10px;
+    }
 }
