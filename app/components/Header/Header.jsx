@@ -139,13 +139,13 @@ const Header = () => {
 
                   </SheetClose>
                 </li>
-                <li>
+                <li className="border-b-[1px]">
                   <SheetClose asChild>
 
                   <Link
                     scroll={true}
                     href="#"
-                    className="text-white hover:text-gray-300 border-b-[1px] pb-1"
+                    className="text-white hover:text-gray-300"
                   >
                     Enquire Now
                   </Link>
@@ -160,7 +160,7 @@ const Header = () => {
       <nav
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:flex md:items-center lg:hidden xl:block`}
+        } hidden xl:block`}
       >
         <ul className="menuUl md:flex md:items-center md:space-x-6">
           <li>
@@ -208,10 +208,10 @@ const Header = () => {
               Special Orders
             </Link>
           </li>
-          <li>
+          <li className="border-b-[2px]">
             <Dialog>
               <DialogTrigger asChild>
-                <div className="text-white hover:text-gray-300 border-b-[1px] pb-1">
+                <div className="text-white hover:text-gray-300">
                   Enquire Now
                 </div>
               </DialogTrigger>

@@ -5,6 +5,10 @@ import { Metadata } from "next";
 
 import localFont from 'next/font/local'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 const avenirTs = localFont({
   src: [

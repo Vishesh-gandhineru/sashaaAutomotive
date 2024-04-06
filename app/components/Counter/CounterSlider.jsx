@@ -83,7 +83,7 @@ export default function CounterSlider({ counters }) {
             <h5 className="text-[46px] tracking-[2px]">
             <CountUp end={`${counters[0].year}`} enableScrollSpy={true} className="text-[#C4CBD0]"/>  
               <span className="block uppercase text-[14px] tracking-[2px]">
-                year
+                years
               </span>
             </h5>
           </div>

@@ -19,6 +19,11 @@ export const SpareParts = {
             name: 'categories',
             type: 'array',
             of: [{ type: 'reference', to: [{ type: 'sparePartCategory' }] }],
+        },
+        {
+            title: 'display order',
+            name: 'displayOrder',
+            type: 'number',
         }
     ]
 }

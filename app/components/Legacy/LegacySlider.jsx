@@ -2,7 +2,7 @@
 
 import { useState , useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination , Autoplay } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -42,8 +42,10 @@ export default function LegacySlider({ legacy }) {
           scrollbar={{
             show: true,
           }}
-          modules={[Scrollbar]}
-        >
+          autoplay={{ delay: 5000 }}
+          loop={true}
+          modules={[Scrollbar , Autoplay]}
+          >
           {legacy.map((item) => {
             return (
               <SwiperSlide key={item._id}>
@@ -76,7 +78,11 @@ export default function LegacySlider({ legacy }) {
         pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
+          loop={true}
+          modules={[Pagination , Autoplay]}
+          autoplay={{
+            delay: 3000,
+          }}
         className="legacy-swiper"
       >
         {legacy.map((item) => {

@@ -2,6 +2,7 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { Autoplay } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -39,6 +40,10 @@ export default function LogoGallerySlider({ galleryList }) {
       <Swiper
         grabCursor={true}
         slidesPerView={3}
+        autoplay={{
+          delay: 3000,
+        }}
+        modules={[Autoplay]}
         breakpoints={{
             640: {
               slidesPerView: 3,
