@@ -36,7 +36,8 @@ export default function SparePartsSection() {
   const [Categories, setCategories] = useState([]);
 
   const FetchSpareParts = () => {
-    const SPAREPARTS_QUERY = `*[_type == 'spareParts']{title , categories , image , _id}`;
+    const SPAREPARTS_QUERY = `*[_type == 'spareParts' ] | order(displayOrder asc)
+{displayOrder,title , categories , image , _id}`;
     const SpareParts = client.fetch(SPAREPARTS_QUERY);
     return SpareParts;
   };
@@ -150,7 +151,7 @@ export default function SparePartsSection() {
                     <div className="productCard flex flex-col justify-center items-center w-[75%] m-auto">
                       <img src={urlFor(item.image).url()} alt={item.title} className="text-center"  />
                       <h3 className="text-center mt-3 text-[14px]">
-                        {item.title}
+                        {item.title} 
                       </h3>
                     </div>
                   </SwiperSlide>
