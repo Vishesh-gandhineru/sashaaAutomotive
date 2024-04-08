@@ -33,11 +33,9 @@ export default function AnimatedSpecialOrder({ special }) {
         <div className="mainSection">
         
         <div className="ImagesSection relative w-full">
-    <img src={urlFor(special[0].mainImage).url()} className="h-[300px] w-full object-cover object-center lg:h-full lg:w-[500px] lg:ml-[80px]" />
-    <video autoPlay muted loop src="https://cdn.sanity.io/files/zllfluo3/production/7d7b4b27f89255bd852e5077d00c0164abde0800.mp4" className="w-[150px] absolute top-[70%] left-[200px] hidden lg:block"/>
-    <img src={urlFor(special[0].thirdImage).url()} className="hidden lg:block lg:absolute lg:left-[80%] lg:top-[0] lg:w-[180px]"/>
+    <img src={urlFor(special[0].mainImage).url()} className=" h-[200px] sm:h-[300px] w-full object-cover object-top lg:h-full lg:w-[70%]" />
  </div>
- <div className="lg:ml-8 p-8 glassmorphism-hero glassmorphism-content mt-[-150px] w-[100%] lg:w-[65%] lg:mt-[-200px] lg:float-end">
+ <div className="lg:ml-8 p-8 glassmorphism-hero glassmorphism-content mt-[-50px] w-[100%] lg:w-[60%]  xl:w-[50%] lg:mt-[-200px] lg:float-end">
     <h3 className="text-[36px] leading-10 mb-5">
     {special[0].title}
     </h3>

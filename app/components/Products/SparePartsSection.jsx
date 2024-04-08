@@ -5,7 +5,7 @@ import "./Product.css";
 import { client } from "../../../sanity/client";
 import { urlFor } from "../../../sanity/lib/ImageUrlBuilder";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation , Autoplay } from "swiper/modules";
 import "swiper/css/navigation";
 
 import "swiper/css";
@@ -109,7 +109,7 @@ export default function SparePartsSection() {
             <div
             id={item.title}
               key={item._id}
-              className={`filter border border-[rgba(255,255,255,0.40)] pr-[90px] flex-shrink-0 flex-grow-0 p-4 lg:w-[300px] cursor-pointer uppercase text-[14px] tracking-[2px] ${index === 0 ? 'active-filter' : ''}`}
+              className={`filterBox filter border border-[rgba(255,255,255,0.40)] pr-[90px] flex-shrink-0 flex-grow-0 p-4 lg:w-[300px] cursor-pointer uppercase text-[14px] tracking-[2px] ${index === 0 ? 'active-filter' : ''}`}
               onClick={handleCategorieChange}
               value={item._id}
             >
@@ -122,7 +122,11 @@ export default function SparePartsSection() {
         <Swiper
           grabCursor={true}
           navigation={true}
-          modules={[Navigation]}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          modules={[Navigation, Autoplay]}
           breakpoints={{
             100: {
               slidesPerView: 1,

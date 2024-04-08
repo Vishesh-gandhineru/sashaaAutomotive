@@ -23,17 +23,5 @@ export const specialOrders = {
             type: 'image',
             
         },
-        {
-            title: 'second Image',
-            name: 'secondImage',
-            type: 'image',
-            
-        },
-        {
-            title: 'Third Image',
-            name: 'thirdImage',
-            type: 'image',
-          
-        }
     ]
 }

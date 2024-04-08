@@ -7,7 +7,7 @@ import AnimatedSpecialOrder from "./AnimatedSpecialOrder";
 export default async function SpecialOrder() {
  const special= await FetchSpecialOrders();
  return (
- <section id="specialOrder" className="max-w-[1300px] p-5 m-auto  lg:h-[600px]">
+ <section id="specialOrder" className="max-w-[1300px] md:p-8 p-5 m-auto  lg:h-[600px]">
  <AnimatedSpecialOrder special={special} />
  
  </section>)

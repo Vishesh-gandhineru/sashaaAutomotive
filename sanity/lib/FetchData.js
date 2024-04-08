@@ -30,13 +30,13 @@ export function FetchWhatWeDo () {
 }
 
 export function FetchLegacy () {
-    const LEGACY_QUERY = `*[_type == 'legacy']{title , subtitle , body , image , _id, order} | order(order asc)`;
+    const LEGACY_QUERY = `*[_type == 'legacy']{title , subtitle , body , image , _id, mobileimage ,order} | order(order asc)`;
     const Legacy = client.fetch(LEGACY_QUERY);
     return Legacy;
 }
 
 export function FetchSpecialOrders () {
-    const SPECIALORDERS_QUERY = `*[_type == 'specialOrders']{title , body , mainImage , secondImage , thirdImage , _id}`;
+    const SPECIALORDERS_QUERY = `*[_type == 'specialOrders']{title , body , mainImage , _id}`;
     const SpecialOrders = client.fetch(SPECIALORDERS_QUERY);
     return SpecialOrders;
 }

@@ -71,7 +71,7 @@ export default function ReelsSlider({reels}) {
             <p className="whatWeDoBody text-[16px] leading-[24px] lg:w-[60%] lg:text-left lg:m-auto lg:mb-[30px]  ">Welcome to the one-stop shop for premium European auto components. We specialise in a myriad of OEM-manufactured spare parts, available for both wholesale and retail.<br/> <br/>
             Our offerings extend beyond the basics to encompass cutting-edge tuning and accessory solutions, ensuring your vehicle reaches the pinnacle of performance and style. And with over six decades of industry experience, we&apos;re your go-to source for automotive excellence.</p>
             </div>
-            <div className="relative w-[100%] xl:w-[1000px] m-auto">
+            <div className="relative w-[100%] md:w-[80%] xl:w-[1000px] m-auto">
       
         <Swiper
         grabCursor={true}
@@ -117,8 +117,8 @@ export default function ReelsSlider({reels}) {
         
       </Swiper>    
 
-          <button onClick={()=> (document.getElementById('slider-prev').click())} className="p-2 border absolute top-[40%] left-[-10px] md:left-0 xl:left-[-60px] z-50"><ChevronLeft/></button>
-          <button onClick={()=> (document.getElementById('slider-next').click())} className="p-2 border absolute top-[40%] right-[-10px] md:right-0 xl:right-[-60px] z-50"><ChevronRight/></button>
+          <button onClick={()=> (document.getElementById('slider-prev').click())} className="p-2 border absolute top-[40%] left-[-10px]  md:left-[-50px] xl:left-[-60px] z-50"><ChevronLeft/></button>
+          <button onClick={()=> (document.getElementById('slider-next').click())} className="p-2 border absolute top-[40%] right-[-10px]  md:right-[-50px] xl:right-[-60px] z-50"><ChevronRight/></button>
             </div>
         </div>
     )

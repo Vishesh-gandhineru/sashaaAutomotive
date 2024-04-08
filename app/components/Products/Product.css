@@ -105,3 +105,15 @@
     padding-left: 20px;
   }
 }
+
+
+
+.categoryFilter .active-filter {
+  border-top-width: 1px; /* Adjust the width as needed */
+  border-bottom-width: 1px; /* Adjust the width as needed */
+  border-left-width: 1; /* Transparent left border */
+  border-right-width:0; /* Transparent right border */
+  border-style: solid;
+  border-image: linear-gradient(to right, rgb(204, 204, 204, 0.8), rgb(204, 204, 204, 0.2));
+  border-image-slice: 1;
+}

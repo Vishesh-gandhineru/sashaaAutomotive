@@ -33,6 +33,13 @@ export const Legacy ={
             title: 'Image',
             type: 'image',
         },
+
+        {
+            name: 'mobileimage',
+            title: 'Mobile Image',
+            type: 'image',
+        },
+
         {
             name: 'order',
             title: 'order',

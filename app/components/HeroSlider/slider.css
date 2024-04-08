@@ -3,13 +3,23 @@
     height: 700px;
   }
   
-  @media screen and (max-width: 768px) {
+ 
+  @media screen and (max-width: 1200px) {
+    .mySwiper {
+      height: 600px;
+    }
+    
+  }
+  
+
+  @media screen and (max-width: 600px) {
     .mySwiper {
       height: 800px;
     }
     
   }
   
+
   
   
 

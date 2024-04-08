@@ -34,6 +34,7 @@ export default function LegacySlider({ legacy }) {
     };
   }, []); 
 
+  console.log(legacy)
 
   return (
     <>
@@ -42,7 +43,7 @@ export default function LegacySlider({ legacy }) {
           scrollbar={{
             show: true,
           }}
-          autoplay={{ delay: 5000 }}
+          // autoplay={{ delay: 5000 }}
           loop={true}
           modules={[Scrollbar , Autoplay]}
           >
@@ -52,7 +53,7 @@ export default function LegacySlider({ legacy }) {
                 <div
                   className="h-[650px] lg:h-[450px] bg-cover bg-center bg-no-repeat"
                   style={{
-                    backgroundImage: `url(${urlFor(item.image).url()})`,
+                    backgroundImage: `url(${urlFor(item.mobileimage).url()})`,
                   }}
                 >
                   <div className="glassmorphism-hero p-5 lg:w-[50%] lg:h-full lg:p-[40px]">
@@ -62,7 +63,7 @@ export default function LegacySlider({ legacy }) {
                     <h6 className="text-[18px] uppercase tracking-[2px] mb-3">
                       {item.subtitle}
                     </h6>
-                    <div className="text-[16px] leading-[24px] lg:mt-[30px]">
+                    <div className="text-[14px] leading-[24px] lg:mt-[30px]">
                       <PortableText value={item.body} />
                     </div>
                   </div>

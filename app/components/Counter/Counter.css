@@ -21,9 +21,10 @@
 
 .swiper-pagination-bullet {
     background: #E33A3D;
+    
 }
 
-@media screen and (min-width: 1300px){
+@media screen and (min-width: 768px){
 
     .counter-swiper .swiper-slide:after {
         content:"";
@@ -39,4 +40,15 @@
     .counter-swiper .swiper-slide:first-child:after {
         display: none;
     }
+
+    
+}
+
+
+@media screen and (max-width: 767px){
+    .swiper-pagination {
+        top:78% !important;
+         
+     }
+    
 }

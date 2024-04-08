@@ -17,6 +17,7 @@ export default function Home() {
     <main>
       <Header/>
       <HeroSlider />
+
       <Counter />
       <WhatWeDoSection />
       <PartnersGallery />

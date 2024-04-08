@@ -1,7 +1,6 @@
 
 import "./globals.css";
 import Head from "next/head";
-import { Metadata } from "next";
 
 import localFont from 'next/font/local'
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -36,6 +35,7 @@ export default function RootLayout({ children }) {
       <body className={`${avenirTs.variable} font-sans`}>
       <Head>
 			<link rel='icon' href='/favicon.ico' />
+  
 		</Head>
         {children}      
         <SpeedInsights />

@@ -26,6 +26,9 @@ export default function CounterSlider({ counters }) {
     //GSAP animation
 
     useGSAP(() => {
+
+      let mm = gsap.matchMedia();
+
       gsap.from('.counter-slider' , {opacity: 0, duration: 1, y: 100 ,stagger:0.2, scrollTrigger:{
         trigger: ".counter-swiper",
         start: "top 100%",
@@ -35,11 +38,13 @@ export default function CounterSlider({ counters }) {
 
 
       gsap.from('.counterCarImage', {opacity: 0, duration: 1, y: 100, scrollTrigger:{
-        trigger: ".counter-swiper",
-        start: "top 100%",
+        trigger: ".counterCarImage",
+        start: "0% 100%",
         end: "bottom 10%",
         toggleActions: "play stop play reverse",
       }})
+
+
     }, {});
 
 
@@ -47,7 +52,7 @@ export default function CounterSlider({ counters }) {
 
   return (
     <>
-    <img src={urlFor(counters[0].image).url()} alt="man seating inside car" className="counterCarImage lg:w-[318px]"/>
+    <img src={urlFor(counters[0].image).url()} alt="man seating inside car" className="counterCarImage w-full md:h-[300px] lg:h-[200px] lg:object-cover lg:object-right md:object-cover lg:w-[318px]"/>
       <Swiper
         pagination={true}
         modules={[Pagination]}

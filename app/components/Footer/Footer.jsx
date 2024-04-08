@@ -57,14 +57,14 @@ export default function Footer() {
 
   return (
     <footer
-      className="footerMainSection max-w-[1300px] m-auto bg-cover bg-right bg-no-repeat lg:h-[700px]"
+      className="footerMainSection max-w-[1300px] w-[90%] m-auto bg-cover md:bg-center bg-right bg-no-repeat lg:h-[700px]"
       style={{ backgroundImage: `url(/footerImage.png)` }}
     >
       <div className="glassmorphism-hero p-8  h-fit">
-          <img src="/whiteLogo.svg" alt="white logo" className="footer-logo w-[50%] my-5 lg:w-[15%]" />
+          <img src="/whiteLogo.svg" alt="white logo" className="footer-logo w-[50%] my-5 md:w-[30%] lg:w-[15%] md:my-[50px]" />
         <div className="lg:flex lg:gap-[40px] lg:justify-between">
 
-        <div className="footer-content flex text-[16px] leading-[24px] justify-center flex-col items-center lg:justify-start lg:order-1 lg:w-[35%]">
+        <div className="footer-content flex text-[16px] leading-[24px] justify-center flex-col items-center lg:justify-start lg:order-1 lg:w-[35%] md:mb-[50px]">
           <p>
             Sashaa Automotive - where precision meets passion. Collaborating
             with esteemed brands such as McLaren, Aston Martin, Rolls Royce, and
@@ -106,18 +106,11 @@ export default function Footer() {
                     Special Orders
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    scroll={true} href="#"
-                    className="text-white hover:text-gray-300 border-b-[1px] pb-1 lg:hidden"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
+                
           </ul>
         </div>
         <div className="lg:order-2">
-          <ul className="footer-list grid grid-cols-1 gap-4 lg:grid-cols-2 ">
+          <ul className="footer-list grid grid-cols-1 gap-4 md:grid-cols-2 ">
             <li className="font-[800]">
               Address:
               <span className="block mt-1">
@@ -139,7 +132,7 @@ export default function Footer() {
                 +(91) 22 2382 2484
               </span>
             </li>
-            <li className="block mt-1">
+            <li className="block mt-1 font-[800]">
             Email:
               <span className="block mt-1">
               sashaaautomotive@gmail.com
@@ -152,7 +145,6 @@ export default function Footer() {
           <p className="text-center lg:text-left lg:inline">
             © 2024 Sashaa Automotive. All rights reserved.
           </p>
-          <li className="hidden lg:inline">Privacy Policy</li>
         </div>
       </div>
     </footer>
