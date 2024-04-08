@@ -6,6 +6,7 @@ import { client } from "../../../sanity/client";
 import { urlFor } from "../../../sanity/lib/ImageUrlBuilder";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation , Autoplay } from "swiper/modules";
+
 import "swiper/css/navigation";
 
 import "swiper/css";
@@ -62,6 +63,9 @@ export default function SparePartsSection() {
       filter.classList.remove("active-filter");
     });
     e.currentTarget.classList.add("active-filter");
+
+    
+
   };
 
   function handleAllSpareParts(e) {
@@ -97,6 +101,9 @@ export default function SparePartsSection() {
       console.log("clicked")  
     }, 1000);
   }, [1]);
+
+
+ 
 
 
 

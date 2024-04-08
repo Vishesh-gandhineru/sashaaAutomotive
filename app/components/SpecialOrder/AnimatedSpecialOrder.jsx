@@ -33,7 +33,7 @@ export default function AnimatedSpecialOrder({ special }) {
         <div className="mainSection">
         
         <div className="ImagesSection relative w-full">
-    <img src={urlFor(special[0].mainImage).url()} className=" h-[200px] sm:h-[300px] w-full object-cover object-top lg:h-full lg:w-[70%]" />
+    <img src={urlFor(special[0].mainImage).url()} className=" h-[200px] sm:h-[300px] w-full object-cover object-left-top lg:h-full lg:w-[70%]" />
  </div>
  <div className="lg:ml-8 p-8 glassmorphism-hero glassmorphism-content mt-[-50px] w-[100%] lg:w-[60%]  xl:w-[50%] lg:mt-[-200px] lg:float-end">
     <h3 className="text-[36px] leading-10 mb-5">

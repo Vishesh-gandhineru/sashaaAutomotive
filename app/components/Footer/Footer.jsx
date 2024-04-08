@@ -5,7 +5,8 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP,ScrollTrigger);
-
+import { FaWhatsapp } from "react-icons/fa6";
+import { FaChevronUp } from "react-icons/fa6";
 
 
 export default function Footer() {
@@ -55,16 +56,23 @@ export default function Footer() {
     })
   }, {});
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional: Smooth scroll animation
+    });
+  };
+
   return (
     <footer
-      className="footerMainSection max-w-[1300px] w-[90%] m-auto bg-cover md:bg-center bg-right bg-no-repeat lg:h-[700px]"
+      className="footerMainSection max-w-[1300px] w-[90%] m-auto bg-cover md:bg-center bg-right bg-no-repeat xl:h-[700px]"
       style={{ backgroundImage: `url(/footerImage.png)` }}
     >
       <div className="glassmorphism-hero p-8  h-fit">
           <img src="/whiteLogo.svg" alt="white logo" className="footer-logo w-[50%] my-5 md:w-[30%] lg:w-[15%] md:my-[50px]" />
-        <div className="lg:flex lg:gap-[40px] lg:justify-between">
+        <div className="xl:flex xl:gap-[40px] xl:justify-between">
 
-        <div className="footer-content flex text-[16px] leading-[24px] justify-center flex-col items-center lg:justify-start lg:order-1 lg:w-[35%] md:mb-[50px]">
+        <div className="footer-content flex text-[16px] leading-[24px] justify-center flex-col items-center xl:justify-start xl:order-1 xl:w-[35%] md:mb-[50px]">
           <p>
             Sashaa Automotive - where precision meets passion. Collaborating
             with esteemed brands such as McLaren, Aston Martin, Rolls Royce, and
@@ -76,8 +84,8 @@ export default function Footer() {
             India&apos;s foremost name in automotive modifications.
           </p>
         </div>
-        <div className="my-8 lg:my-0 lg:order-3 lg:w-[15%]">
-          <ul className="footer-list grid grid-cols-2 gap-4 lg:grid-cols-1">
+        <div className="my-8 xl:my-0 xl:order-3 xl:w-[15%]">
+          <ul className="footer-list grid grid-cols-2 gap-4 xl:grid-cols-1">
           <li>
                   <Link scroll={true}
                     href="#whatWeDo"
@@ -147,6 +155,12 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      <a href="https://wa.me/919323122484" target="_blank" className="bg-[#E33A3D] h-[50px] w-[50px] grid place-content-center  rounded-full z-[1000000] fixed bottom-[80px] right-[15px] hover:scale-[1.1] transition-all ease-in cursor-pointer">
+      <FaWhatsapp className="w-fit h-[30px] fill-white" />
+      </a>
+      <button className="bg-[#E33A3D] h-[50px] w-[50px] grid place-content-center  rounded-full z-[1000000] fixed bottom-[20px] right-[15px] hover:scale-[1.1] transition-all ease-in cursor-pointer" onClick={scrollToTop}> 
+        <FaChevronUp className="w-fit h-[20px] md:h-[30px] fill-white" />
+      </button>
     </footer>
   );
 }

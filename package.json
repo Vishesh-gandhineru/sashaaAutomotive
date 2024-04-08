@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.0",
+    "@mailerlite/mailerlite-nodejs": "^1.2.1",
     "@portabletext/react": "^3.0.12",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-switch": "^1.0.3",
@@ -18,6 +19,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.36.2",
     "@vercel/speed-insights": "^1.0.10",
+    "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "gsap": "^3.12.5",

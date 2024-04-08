@@ -10,6 +10,7 @@ import LegacySection from "./components/Legacy/LegacySection";
 import SpecialOrder from "./components/SpecialOrder/SpecialOrder";
 import Products from "./components/Products/Products";
 import Footer from "./components/Footer/Footer";
+import MailerLite from "./components/EnquryForm/mailerLite";
 import './globals.css';
 
 export default function Home() {
@@ -17,7 +18,6 @@ export default function Home() {
     <main>
       <Header/>
       <HeroSlider />
-
       <Counter />
       <WhatWeDoSection />
       <PartnersGallery />

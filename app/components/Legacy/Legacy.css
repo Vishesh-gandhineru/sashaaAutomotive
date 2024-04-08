@@ -26,3 +26,9 @@
 .legacy-swiper .swiper-pagination{
     right: 40px !important;
 }
+
+@media (max-width:1024px){
+    .legacy-swiper {
+        height: 600px;
+    }
+}

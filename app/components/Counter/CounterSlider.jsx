@@ -52,7 +52,7 @@ export default function CounterSlider({ counters }) {
 
   return (
     <>
-    <img src={urlFor(counters[0].image).url()} alt="man seating inside car" className="counterCarImage w-full md:h-[300px] lg:h-[200px] lg:object-cover lg:object-right md:object-cover lg:w-[318px]"/>
+    <img src={urlFor(counters[0].image).url()} alt="man seating inside car" className="counterCarImage w-full md:h-[300px] lg:h-[200px] lg:object-cover lg:object-center md:object-cover lg:w-[318px]"/>
       <Swiper
         pagination={true}
         modules={[Pagination]}
