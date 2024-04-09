@@ -136,15 +136,19 @@ export default function Footer() {
             <li className="font-[800]">
               Phone:
               <span className="block mt-1">
-                +(91) 93231 22484 <br />
-                +(91) 22 2382 2484
+                <a href="tel:919323122484">
+                  +(91) 93231 22484 <br />
+                  </a>
+                <a href="tel:912223822484">
+                +(91) 222382 2484
+                </a>
               </span>
             </li>
             <li className="block mt-1 font-[800]">
             Email:
-              <span className="block mt-1">
+              <a href="mailto:sashaaautomotive@gmail.com" className="block mt-1">
               sashaaautomotive@gmail.com
-              </span>
+              </a>
             </li>
           </ul>
         </div>
