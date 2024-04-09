@@ -101,8 +101,8 @@ export default function HeroSlider() {
                       ).url()})`,
                   }} className="background-cover h-full  w-full bg-no-repeat bg-bottom bg-cover lg:bg-center">
                     <div className="h-full max-w-[1300px] w-full m-auto">
-                        <div className="glassmorphism-hero w-full md:w-[70%] xl:w-[50%] h-[52%] md:h-full absolute z-10 left-0"></div>
-                <div className="relative p-5 lg:p-3 pb-10 h-[50%] w-full md:w-[70%] lg:w-[60%] xl:w-[50%] text-center flex flex-col justify-end z-10 items-start gap-4 lg:gap-8  md:h-full md:justify-center lg:pl-8 ">
+                        <div className="glassmorphism-hero w-full md:w-[70%] xl:w-[50%] h-[58%] md:h-full absolute z-10 left-0"></div>
+                <div className="relative p-5 lg:p-3 pb-10 h-[58%] w-full md:w-[70%] lg:w-[60%] xl:w-[50%] text-center flex flex-col justify-end z-10 items-start gap-4 lg:gap-8  md:h-full md:justify-center lg:pl-8 ">
                   <h1 className="sliderText text-white text-[36px] text-left  leading-[46px] lg:text-[56px] lg:leading-[66px]">
                   One Stop Shop for Premium European Spare Parts
                   </h1>

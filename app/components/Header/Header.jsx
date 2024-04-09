@@ -61,9 +61,9 @@ const Header = () => {
 
   return (
     <header className={`navigationHeigth w-[100vw]  m-auto text-white z-[1000]  mb-[-100px] transition-all ease ${headerSticky ? "fixed top-0 bg-[#1B1B1B]" : "relative"}`}>
-      <div className={`flex items-center max-w-[1300px]  m-auto p-5 py-8 justify-between lg:px-10 xl:px-4  text-white z-50`} >
+      <div className={`flex items-center max-w-[1300px]  m-auto p-5 py-5 sm:py-8 justify-between lg:px-10 xl:px-4  text-white z-50`} >
       <div className="logo flex items-center">
-        <img src="/Logo.svg" alt="Logo" className="w-full h-full mr-2" />
+        <img src="/Logo.svg" alt="Logo" className="w-[80%] h-full sm:w-full mr-2" />
       </div>
       
       <div className="xl:hidden">
