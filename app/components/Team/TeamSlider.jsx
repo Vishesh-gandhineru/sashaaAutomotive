@@ -46,7 +46,7 @@ export default function TeamSlider({ teams }) {
     <>
     <h2 className="team-heading-text mb-10 uppercase text-[14px] text-center leading-[20px] tracking-[2px]">
                 Heritage Driven Excellence</h2>   
-                <div className="w-[100%] lg:w-[1000px] m-auto">
+                <div className="w-[100%] xl:w-[1000px] m-auto">
       <Swiper
         pagination={true}
         modules={[Pagination]}
