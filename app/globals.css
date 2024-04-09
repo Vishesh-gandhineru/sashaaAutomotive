@@ -4,12 +4,15 @@
 
 
 /* Path: app/components/MyComponent.css */
-  html ,body{
+  html{
     scroll-behavior: smooth;
+    scroll-padding-top: var(--scorll-padding, 100px);
+    
   }
   body {
     background: #1B1B1B;
     scroll-behavior: smooth;
+    overflow-x: hidden !important;    
   }
 
 h1 , h2, h3, h4, h5, h6 , p , span , div , li , a {

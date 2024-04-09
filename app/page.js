@@ -14,6 +14,7 @@ import MailerLite from "./components/EnquryForm/mailerLite";
 import './globals.css';
 
 export default function Home() {
+   
   return (
     <main>
       <Header/>

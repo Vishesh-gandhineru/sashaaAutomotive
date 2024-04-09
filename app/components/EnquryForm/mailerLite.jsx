@@ -2,110 +2,103 @@
 
 import { useState, useEffect } from "react";
 import RightIcon from "../rightIcon";
-import MailerLite from "@mailerlite/mailerlite-nodejs";
+import { Loader } from 'lucide-react';
+
 import Image from "next/image";
+import { useFormik } from "formik";
+import { inquireSchemas } from "@/app/schemas";
 import axios from "axios";
 
 
 
 export default function MailerLiteForm() {
 
-    const [name , setName] = useState("");
-    const [mobile , setMobile] = useState("");
-    const [email , setEmail] = useState("");
-    const [vehicleBrand , setVehicleBrand] = useState("");
-    const [vin , setVin] = useState("");
-    const [interestedProduct , setInterestedProduct] = useState("");
-    const [location , setLocation] = useState("");
     const [submittedSuccess , setSubmittedSuccess] = useState(false);
     const [submittedError , setSubmittedError] = useState(false);
+    const [loaded , setLoaded] = useState(false);
     
-
-
-    const handleChange = (e) => {
-        const {name , value} = e.target;
-
-   
-        switch(name) {
-            case "name":
-                setName(value);
-                break;
-            case "mobile":
-                setMobile(value);
-                break;
-            case "email":
-                setEmail(value);
-                break;
-            case "vehicleBrand":
-                setVehicleBrand(value);
-                break;
-            case "vin":
-                setVin(value);
-                break;
-            case "interestedProduct":
-                setInterestedProduct(value);
-                break;
-            case "location":
-                setLocation(value);
-                break;
-            default:
-                break;
-        }       
-        
-    }
     const apikey = process.env.NEXT_PUBLIC_MAILERLITE_API_KEY;
-    const mailerlite = new MailerLite({
-        api_key : apikey,        
-    });
+    const baseAPIURL = "https://connect.mailerlite.com/";
 
-    const addSubscriberAipUrl = "https://connect.mailerlite.com/api/subscribers";
+
+    const {values, errors, touched, handleChange , handleSubmit} = useFormik({
+        initialValues: {
+            name: "",
+            mobile: "",
+            email: "",
+            vehicleBrand: "",
+            vin: "",
+            interestedProduct: "",
+            location: "",
+        },
+        validationSchema: inquireSchemas,
+
+        onSubmit: (values, action) => {
+            setLoaded(true);
+            const params = {
+                email: values.email,
+                fields: {
+                  name: values.name,
+                  phone: values.mobile,
+                  interested_product: values.interestedProduct,
+                    location: values.location,
+                    vehicle_brand: values.vehicleBrand,
+                    vin: values.vin,
+                },
+                groups: ["118108972678907288"],
+                status: "active", // possible statuses: active, unsubscribed, unconfirmed, bounced or junk.
+              };
+
+              const config = {                
+                headers: {
+                "Authorization": `Bearer ${apikey}`,
+                  "Content-Type": "application/json",
+                  "Accept": "application/json"
+                },
+              };
+
+      axios.post(`${baseAPIURL}api/subscribers`, params, config)
+      .then(response => {          
+        if (response.status === 200 || response.status === 201) {
+            setSubmittedSuccess(true);
+            setLoaded(false);
+        }
+      })
+      .catch(error => {
+        if (error.response) console.log(error.response.data);
+        if (error.response === 400) {
+            setSubmittedError(true);
+        }
     
-    const handleSubmit =  (e) => {
-        const todaysDate = new Date();
-        e.preventDefault();
-        const params = {
-            email: email,
-            fields: {
-              name: name,
-              phone: mobile,
-              interested_product: interestedProduct,
-                location: location,
-                vehicle_brand: vehicleBrand,
-                vin: vin,
-            },
-            groups: ["118027326539695293"],
-            status: "active", // possible statuses: active, unsubscribed, unconfirmed, bounced or junk.
-          };
- 
-          mailerlite.subscribers.createOrUpdate(params)
-  .then(response => {
-    if (response.status === 200) {
-        setSubmittedSuccess(true);
-    }
-  })
-  .catch(error => {
-    if (error.response) console.log(error.response.data);
-  });
-    }
-    
+      });
+
+      action.resetForm();
+        },
+
+        onChange: (event) => {
+            const {name , value} = event.target;
+            formik.setFieldValue(name , value);
+        }
+    })
 
     
-
+  
     return (
         <div className="flex flex-col sm:flex-row">
             <div className="w-full sm:w-[80%] p-5 mx-auto md:p-10 py-[50px]">
-                <form className="rounded flex flex-col gap-8" onSubmit={handleSubmit}>
+                <form className="rounded flex flex-col gap-5" onSubmit={handleSubmit} >
                     <div className="mb-4">
                         <input
                             className="shadow appearance-none border-b border-gray-300 bg-transparent w-full py-2 px-0 text-white leading-tight focus:outline-none focus:shadow-outline"
                             id="name"
                             type="text"
-                            value={name}
-                            placeholder="Full Name"
+                            value={values.name}
+                            placeholder="Full Name *"
                             onChange={handleChange}
                             name="name"
-                            required
+                            
                         />
+                        {errors.name && touched.name ? <p className="form-error text-red-300 mt-2">{errors.name}</p> : null}
                     </div>
                     <div className="mb-4 flex flex-col sm:flex-row gap-8">
                         <div className="w-full sm:w-1/2 mb-4 sm:mb-0">
@@ -113,24 +106,26 @@ export default function MailerLiteForm() {
                                 className="shadow appearance-none border-b border-gray-300 bg-transparent w-full py-2 px-0 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="mobile"
                                 type="text"
-                                value={mobile}
-                                placeholder="Mobile Number"
+                                value={values.mobile}
+                                placeholder="Mobile Number *"
                                 onChange={handleChange}
                                 name="mobile"
-                                required
+                                
                             />
+                            {errors.mobile && touched.mobile ? <p className="form-error text-red-300 mt-2">{errors.mobile}</p> : null}
                         </div>
                         <div className="w-full sm:w-1/2">
                             <input
                                 className="shadow appearance-none border-b border-gray-300 bg-transparent w-full py-2 px-0 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="email"
                                 type="email"
-                                value={email}
-                                placeholder="Email Address"
+                                value={values.email}
+                                placeholder="Email Address *"
                                 onChange={handleChange}
                                 name="email"
-                                required
+                                
                             />
+                            {errors.email && touched.email ? <p className="form-error text-red-300 mt-2">{errors.email}</p> : null}
                         </div>
                     </div>
                     <div className="mb-4 flex flex-col sm:flex-row gap-8">
@@ -139,24 +134,26 @@ export default function MailerLiteForm() {
                                 className="shadow appearance-none border-b border-gray-300 bg-transparent w-full py-2 px-0 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="vehicle-brand"
                                 type="text"
-                                value={vehicleBrand}
-                                placeholder="Vehicle Brand"
+                                value={values.vehicleBrand}
+                                placeholder="Vehicle Brand *"
                                 onChange={handleChange}
                                 name="vehicleBrand"
-                                required
+                              
                             />
+                            {errors.vehicleBrand && touched.vehicleBrand ? <p className="form-error text-red-300 mt-2">{errors.vehicleBrand}</p> : null}
                         </div>
                         <div className="w-full sm:w-1/2">
                             <input
                                 className="shadow appearance-none border-b border-gray-300 bg-transparent w-full py-2 px-0 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="vin"
                                 type="text"
-                                value={vin}
-                                placeholder="VIN/Chassis/Engine No."
+                                value={values.vin}
+                                placeholder="VIN/Chassis/Engine No. *"
                                 onChange={handleChange}
                                 name="vin"
-                                required
+                             
                             />
+                            {errors.vin && touched.vin ? <p className="form-error text-red-300 mt-2">{errors.vin}</p> : null}
                         </div>
                     </div>
                     <div className="mb-4 flex flex-col sm:flex-row gap-8">
@@ -165,36 +162,42 @@ export default function MailerLiteForm() {
                                 className="shadow appearance-none border-b border-gray-300 bg-transparent w-full py-2 px-0 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="interested-product"
                                 type="text"
-                                value={interestedProduct}
-                                placeholder="Interested Product"
+                                value={values.interestedProduct}
+                                placeholder="Interested Product *"
                                 onChange={handleChange}
                                 name="interestedProduct"
-                                required
+                                
                             />
+                            {errors.interestedProduct && touched.interestedProduct ? <p className="form-error text-red-300 mt-2">{errors.interestedProduct}</p> : null}
                         </div>
                         <div className="w-full sm:w-1/2">
                             <input
                                 className="shadow appearance-none border-b border-gray-300 bg-transparent w-full py-2 px-0 text-white leading-tight focus:outline-none focus:shadow-outline"
                                 id="location"
                                 type="text"
-                                value={location}
-                                placeholder="Location"
+                                value={values.location}
+                                placeholder="Location *"
                                 onChange={handleChange}
                                 name="location"
-                                required
                             />
+                            {errors.location && touched.location ? <p className="form-error text-red-300 mt-2">{errors.location}</p> : null}
                         </div>
                     </div>
                     <div className="flex items-center justify-start">
                         <div className="inline-flex justify-center items-center hover:scale-[1.1] transition-all ease-in-out">
-                            <button className="text-white px-12 py-3 border-[2px] border-r-0">
+                            <button type="submit" className="text-white px-12 py-3 border-[2px] border-r-0">
                                 Submit
                             </button>
+                            { loaded ?<span className=" bg-white h-full flex justify-center items-center py-[14px] px-4 text-[20px]">
+                            <Loader className="stroke-[#000] animate-spin"/>  
+                            </span> : 
                             <span className=" bg-white h-full flex justify-center items-center py-[21px] px-4 text-[20px]">
-                                <RightIcon />
-                            </span>
+                            <RightIcon />
+                            </span> }
+                            
                         </div>
                     </div>
+                    {submittedSuccess ? <p className="text-green-500">Thank you for contacting Sashaa Automotive. Our team will get in touch with you at the earliest.</p> : null}
                 </form>
             </div>
             <div className="relative w-full sm:w-[50%] h-[300px] sm:h-full hidden sm:block">
