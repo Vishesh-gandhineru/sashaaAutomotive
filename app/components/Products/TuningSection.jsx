@@ -18,13 +18,13 @@ export default function TuningSection() {
     console.log(filteredTuning)
     const FetchTuning = () => {
         const TUNING_QUERY = `*[_type == 'tuning']{title , categories , body , image , _id}`;
-        const tuning = client.fetch(TUNING_QUERY);
+        const tuning = client.fetch(TUNING_QUERY ,{ next: { revalidate: 10 } });
         return tuning;
     };
 
     const FetchTuningCategories = () => {
         const TUNING_CATEGORIES_QUERY = `*[_type == 'tuningCategory']{title , _id} | order(title asc)`;
-        const tuningCategories = client.fetch(TUNING_CATEGORIES_QUERY);
+        const tuningCategories = client.fetch(TUNING_CATEGORIES_QUERY ,{ next: { revalidate: 10 } });
         return tuningCategories;
     };
 

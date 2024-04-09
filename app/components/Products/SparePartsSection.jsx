@@ -39,13 +39,13 @@ export default function SparePartsSection() {
   const FetchSpareParts = () => {
     const SPAREPARTS_QUERY = `*[_type == 'spareParts' ] | order(displayOrder asc)
 {displayOrder,title , categories , image , _id}`;
-    const SpareParts = client.fetch(SPAREPARTS_QUERY);
+    const SpareParts = client.fetch(SPAREPARTS_QUERY  ,{ next: { revalidate: 10 } });
     return SpareParts;
   };
 
   const FetchSpareCategorie = () => {
     const CATEGORIES_QUERY = `*[_type == 'sparePartCategory']{title , _id}`;
-    const Categories = client.fetch(CATEGORIES_QUERY);
+    const Categories = client.fetch(CATEGORIES_QUERY ,{ next: { revalidate: 10 } });
     return Categories;
   };
 
