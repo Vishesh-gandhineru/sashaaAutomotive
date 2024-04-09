@@ -121,10 +121,10 @@ export default function Footer() {
           <ul className="footer-list grid grid-cols-1 gap-4 md:grid-cols-2 ">
             <li className="font-[800]">
               Address:
-              <span className="block mt-1">
+              <a href="https://maps.app.goo.gl/iSzDgR3NQRkFNp629" target="_blank" className="block mt-1">
                 25 Avantikabai Gokhale Street,
                 <br /> Opera House, Mumbai 400004
-              </span>
+              </a>
             </li>
             <li className="font-[800]">
               Hours:
