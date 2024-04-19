@@ -21,11 +21,6 @@ export const WhatWeDo = {
                 type: "string",
                 },
                 {
-                    title: "Post Date",
-                    name: "postDate",
-                    type: "string",
-                    },
-                {
                 title: "Video",
                 name: "video",
                 type: "file",

@@ -106,7 +106,6 @@ export default function ReelsSlider({reels}) {
                         </div>
                         <div className="reel-content text-center lg:text-center text-[20px] mt-[20px]">
                             <p>{reel.title}</p>
-                            <p className="uppercase text-[14px] mt-2 tracking-[1px]">{reel.postDate}</p>
                         </div>
                         </div>
                     </SwiperSlide>
