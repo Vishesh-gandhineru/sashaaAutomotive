@@ -8,7 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { register } from 'swiper/element/bundle';
 // register Swiper custom elements
 register();
-
+export const revalidate = 10;
 const avenirTs = localFont({
   src: [
     {
@@ -30,6 +30,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
 
  
   

@@ -12,7 +12,7 @@ import Products from "./components/Products/Products";
 import Footer from "./components/Footer/Footer";
 import MailerLite from "./components/EnquryForm/mailerLite";
 import './globals.css';
-
+export const revalidate = 10;
 export default function Home() {
    
   return (
